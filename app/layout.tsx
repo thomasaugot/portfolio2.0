@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ClientSideWrapper from "@/components/ClientSideWrapper";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.className} p-4 bg-gradient-to-r from-zinc-700 to-zinc-900`}
+      >
+        <ClientSideWrapper>
+          <Navbar />
+        </ClientSideWrapper>
+      </body>
     </html>
   );
 }

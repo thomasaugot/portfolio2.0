@@ -1,0 +1,90 @@
+{
+  "About": "Acerca de",
+  "Projects": "Proyectos",
+  "Contact": "Contacto",
+  "< Hi! I am Thomas,": "< ¡Hola! Soy Thomas,",
+  "Web & Mobile Developer />": "Desarrollador Web y Móvil />",
+  "Dedicated to crafting beautiful and user-friendly digital products": "Dedicado a crear productos digitales atractivos y intuitivos",
+  "About me": "Acerca de mi",
+  "Hi there! I am Thomas, a passionate developer hailing from Nantes, France. As an ex-globetrotter, I bring a global perspective and an insatiable appetite for challenges to the world of web and mobile development.": "¡Hola! Soy Thomas, un desarrollador francés actualmente disfrutando de la vida isleña en la hermosa Fuerteventura. Como antiguo trotamundos, traigo una perspectiva global y un apetito insaciable por los desafíos al mundo del desarrollo web y móvil.",
+  "In today's rapidly changing digital landscape, my mission is clear: to enhance online presence and visibility for both businesses and individuals. While specializing in frontend development, my fullstack experience allows me to craft exceptional digital experiences and address any challenges that arise. By staying abreast of the latest tech trends, I ensure that my work adheres to modern design principles and the best practices in web and mobile development.": "En este paisaje digital constantemente cambiando, mi misión es clara: elevar la presencia en línea y la visibilidad tanto para empresas como para individuos. Especializado en el desarrollo frontend, mi experiencia fullstack me permite crear experiencias digitales excepcionales y abordar cualquier desafío que surja. Manteniéndome al día con las últimas tendencias tecnológicas, me aseguro de que mi trabajo se ajuste a los principios de diseño modernos y las mejores prácticas en desarrollo web y móvil.",
+  "While my playground primarily revolves around Javascript and its captivating frameworks, I am never confined by boundaries and always seek to expand my skillset!": "Aunque mi campo de juego gira principalmente en torno a JavaScript y sus cautivadores frameworks, nunca me siento limitado por fronteras y siempre busco expandir mi conjunto de habilidades !",
+  "My Skills": "Mis Competencias",
+  "Skills": "Competencias",
+  "Certifications": "Certificaciones",
+  "Full-Stack Web Development, MERN": "Desarollo web Full-stack, MERN",
+  "9-week web development bootcamp, during which I was taught the following technologies:": "9 semanas de bootcamp de desarrollo web, durante el cuál me enseñaron las siguientes tecnologías:",
+  "Show credential": "Ver diploma",
+  "Mobile Development with React Native": "Desarollo móvil con React Native",
+  "28-hour course covering mobile apps development using :": "28 horas de curso que cubre el desarrollo de aplicaciones móviles utilizando:",
+  "Version control": "Control de version",
+  "Featured Projects": "Proyectos destacados",
+  "More details": "Más detalles",
+  "View Code": "Ver código",
+  "Visit page": "Visitar Pagina Web",
+  "Contact me": "Contacta conmigo",
+  "What's on your mind? (besides pizza)": "¿Qué pasa por su mente? (además de una buena pizza)",
+  "yourname@example.com": "sunombre@ejemplo.com",
+  "John Doe": "Juan Pérez",
+  "Name": "Nombre",
+  "Email": "Correo electrónico",
+  "Message": "Mensaje",
+  "Send": "Enviar",
+  "Let's connect!": "¡Sígueme!",
+  "Back to Top": "Inicio",
+  "back": "volver",
+  "Testimonials": "Testimonios",
+  "Thomas, in record time, has been able to create our website. He leads a team of professionals and fully satisfies us in these aspects. He shines through his technical knowledge in IT development, his responsiveness, his kindness, and especially his availability. We have appreciated all these qualities to the extent that we have asked him, along with other professionals, to lead the web marketing, social media communication, database development, in short, all of our IT projects. The entire Eurafrique community thanks him.": "Thomas, en tiempo récord, ha logrado crear nuestro sitio web. Lidera un equipo de profesionales y nos satisface plenamente en estos aspectos. Sobresale por sus conocimientos técnicos en desarrollo de TI, su capacidad de respuesta, amabilidad y sobre todo, su disponibilidad. Hemos apreciado todas estas cualidades hasta el punto de pedirle, junto con otros profesionales, que dirija el marketing web, la comunicación en redes sociales, el desarrollo de bases de datos, en resumen, todos nuestros proyectos de TI. Toda la comunidad de Eurafrique le agradece.",
+  "See full document": "Ver documento completo",
+  "Volunteer Coordinator, Association": "Coordinador de Voluntarios, Asociación",
+  "Back": "Volver",
+  "Skills & Services": "Habilidades y Servicios",
+  "Frontend Development": "Desarollo de Frontend",
+  "Crafting user interfaces from scratch with the most performant technologies such as React.js or Next.js for a seamless user experience.": "Creando interfaces de usuario desde cero con las tecnologías más eficientes como React.js o Next.js para una experiencia de usuario fluida.",
+  "Backend Development": "Desarollo de Backend",
+  "Building robust server-side applications using technologies like Node.js, Express, SQL, noSQL databases and cloud services.": "Construyendo aplicaciones robustas en el lado del servidor utilizando tecnologías como Node.js, Express, bases de datos SQL y noSQL, y servicios en la nube.",
+  "Mobile App Development": "Desarrollo de Aplicaciones Móviles",
+  "Chief Technical Officer": "Director Técnico",
+  "Crafted with": "Desarollado con",
+  "by ": "por ",
+  "Thomas Augot has been an outstanding asset to our team. His passion for development, creativity, and commitment make him a promising professional in the field. I highly recommend Thomas for any future opportunities in mobile development.": "Thomas Augot ha sido un activo excepcional para nuestro equipo. Su pasión por el desarrollo, la creatividad y el compromiso lo convierten en un profesional prometedor en este campo. Recomiendo encarecidamente a Thomas para cualquier oportunidad futura en el desarrollo móvil",
+  "Developing intuitive mobile applications for iOS and Android using native development tools.": "Desarrollando aplicaciones móviles intuitivas para iOS y Android utilizando herramientas de desarrollo nativas.",
+  "projects": [
+    {
+      "name": "Charpente Menuiserie Durand",
+      "description": "Un sitio web que diseñé y desarrollé para una empresa francesa de construción."
+    },
+    {
+      "name": "Wave Rider Surf Shop",
+      "description": "Un sitio web de e-commerce que construí como un tributo a la isla que llamo hogar y al paraíso de los deportes acuáticos: Fuerteventura."
+    },
+    {
+      "name": "Farmhouse Table",
+      "description": "Un sitio web de restaurante que integra la API de Google Maps y un formulario de reserva."
+    },
+    {
+      "name": "Kingpad",
+      "description": "Una página web completamente receptiva que construí para Kingworld Finance, colaborando con un equipo de diseñadores y desarrolladores, duplicando perfectamente un diseño de Figma."
+    },
+    {
+      "name": "Attorneyster",
+      "description": "La página de inicio de un sitio web de servicios legales, creada como parte de un desafío de frontend que desarrollé para practicar Next.js y Tailwind CSS."
+    },
+    {
+      "name": "Todayzzz Todos",
+      "description": "Una aplicación de tareas con 'drag & drop' para organizar sus tareas diarias que construí para practicar PostgrSQL, Typescript, Jest y SCSS."
+    },
+    {
+      "name": "Eurafrique",
+      "description": "Un sitio web completamente receptivo y multilingüe (francés, inglés, español y árabe) que desarrollé para la asociación Eurafrique.eu."
+    },
+    {
+      "name": "Partymates",
+      "description": "Una aplicación de redes sociales de tipo MERN que creé para conectar a las personas para que puedan viajar juntas a festivales. Los usuarios pueden crear una cuenta, guardar o suscribirse a eventos e interactuar con otros usuarios."
+    },
+    {
+      "name": "Pickle Rick vs Rats - The Game",
+      "description": "Mi primer proyecto de codigo, un juego de disparos en Javascript, ¡mata las ratas!"
+    }
+  ]
+}
