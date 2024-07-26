@@ -37,45 +37,41 @@ const Navbar = () => {
       {isMobile ? (
         // Mobile Navigation
         <div>
-          {/* Mobile Navigation Icon */}
           <div
             onClick={handleClick}
             className="fixed flex flex-col justify-center items-center z-50 mr-2 top-10 right-4 lg:hidden"
           >
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 lg:10 rounded-sm ${
+              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 rounded-sm ${
                 isOpen ? "rotate-45 translate-y-2" : "-translate-y-1"
               }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 lg:10 rounded-sm my-1 ${
+              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 rounded-sm my-1 ${
                 isOpen ? "opacity-0" : "opacity-100"
               }`}
             ></span>
             <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 lg:10 rounded-sm ${
+              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 rounded-sm ${
                 isOpen ? "-rotate-45 -translate-y-2" : "translate-y-1"
               }`}
             ></span>
           </div>
-          {/* Mobile Navigation Menu */}
           <ul
-            className={
-              isOpen
-                ? "fixed z-40 lg:hidden left-0 top-0 w-[100%] h-full brick-bg ease-in-out duration-500"
-                : "mt-24 z-40 ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-            }
+            className={`fixed z-40 lg:hidden left-0 top-0 w-full h-full bg-secondary-bg flex flex-col items-center justify-center transition-transform duration-500 ${
+              isOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
           >
-            {/* Mobile Navigation Items */}
             {navItems.map((item) => (
               <li
                 key={item.id}
-                style={{ userSelect: "none" }}
-                className={`tracking-wider p-4 md:p-6 rounded-xl ml-6 font-medium duration-300 text-white cursor-pointer text-3xl md:text-4xl`}
+                className="font-orbitron z-50 tracking-wider p-4 md:p-6 rounded-xl font-medium text-white text-3xl md:text-4xl text-center cursor-pointer"
+                onClick={() => {
+                  setActiveLink(item.target);
+                  handleClick();
+                }}
               >
-                <Link href={item.target} onClick={handleClick}>
-                  {item.text}
-                </Link>
+                <Link href={item.target}>{item.text}</Link>
               </li>
             ))}
           </ul>
@@ -83,17 +79,18 @@ const Navbar = () => {
       ) : (
         // Desktop Navigation
         <div
-          className={`z-50 bg-transparent flex justify-between items-center h-[12vh] w-[100vw]  text-primary ${
+          className={`z-50 bg-secondary-bg/50 flex justify-between items-center h-[10vh] w-full text-primary ${
             isMobile ? "relative" : "fixed"
-          } top-9 2xl:top-6 lg:h-[20vh]`}
+          } top-6 2xl:top-4`}
         >
+          <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[14vh] bg-clip-padding backdrop-blur-sm px-10"></div>
           {/* Logo */}
-          <div className="hidden lg:flex justify-evenly ml-8 gap-8">
+          <div className="hidden lg:flex justify-evenly ml-auto gap-8 mr-24">
             {navItems.map((item) => (
               <Link
                 key={item.id}
                 href={item.target}
-                className={`py-1 text-white font-regular relative m-1 cursor-pointer hover:scale-110 text-lg tracking-wide font-semibold`}
+                className={`py-1 text-white font-regular relative m-1 cursor-pointer hover:scale-110 text-lg tracking-wide font-regular font-orbitron`}
               >
                 {item.text}
                 <span

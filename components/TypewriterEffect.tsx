@@ -1,11 +1,8 @@
 "use client";
 
-import ShootingStars from "@/components/ShootingStars";
-import { StarsBackground } from "@/components/StarsBackground";
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
-import "./globals.css";
 
 export const TypewriterEffect = ({
   words,
@@ -45,16 +42,16 @@ export const TypewriterEffect = ({
     }
   }, [isInView]);
 
-  const renderWords = () => (
+  const renderWords = (wordList: typeof wordsArray) => (
     <motion.div ref={scope} className="inline">
-      {wordsArray.map((word, idx) => (
+      {wordList.map((word, idx) => (
         <div key={`word-${idx}`} className="inline-block">
           {word.text.map((char, index) => (
             <motion.span
               initial={{}}
               key={`char-${index}`}
               className={cn(
-                `dark:text-white text-white opacity-0 hidden font-orbitron mb-4`,
+                `dark:text-white text-white opacity-0 hidden`,
                 word.className
               )}
             >
@@ -64,9 +61,34 @@ export const TypewriterEffect = ({
           &nbsp;
         </div>
       ))}
+    </motion.div>
+  );
+
+  // Find the index of the word "Thomas,"
+  const lineBreakIndex = wordsArray.findIndex(
+    (word) => word.text.join("") === "Thomas,"
+  );
+
+  return (
+    <div
+      className={cn(
+        "p-2 text-5xl md:text-3xl lg:text-7xl font-bold text-center",
+        className
+      )}
+    >
+      {/* Render the words before the line break */}
+      {renderWords(wordsArray.slice(0, lineBreakIndex + 1))}
+      {/* Line break */}
+      <div className="block h-1"></div>
+      {/* Render the words after the line break */}
+      {renderWords(wordsArray.slice(lineBreakIndex + 1))}
       <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
         transition={{
           duration: 0.8,
           repeat: Infinity,
@@ -77,22 +99,10 @@ export const TypewriterEffect = ({
           cursorClassName
         )}
       ></motion.span>
-    </motion.div>
-  );
-
-  return (
-    <div
-      className={cn(
-        "p-2 text-5xl md:text-3xl lg:text-5xl font-bold text-center mt-[12vh]",
-        className
-      )}
-    >
-      {renderWords()}
     </div>
   );
 };
 
-// Usage in your Home component
 export default function Home() {
   const words = [
     { text: "Hi" },
@@ -107,9 +117,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center max-w-[100%] lg:max-w-[55vw] mx-auto">
-      <ShootingStars />
-      <StarsBackground />
+    <main className="flex min-h-screen flex-col items-center justify-center leading-12">
       <TypewriterEffect words={words} />
     </main>
   );
