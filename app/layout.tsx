@@ -22,12 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbitron.variable} ${roboto.variable}`}>
       <body className={`${inter.className} bg-primary-bg`}>
-        <ClientSideWrapper>
+        <div className="relative min-h-screen flex flex-col">
           <ShootingStars />
           <StarsBackground />
           <Navbar />
-          {children}
-        </ClientSideWrapper>
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
     </html>
   );

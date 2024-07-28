@@ -1,12 +1,7 @@
 "use client";
+
 import { cn } from "@/lib/utils";
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  RefObject,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 interface StarProps {
   x: number;
@@ -47,7 +42,7 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
   className,
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
-  const containerRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const generateStars = useCallback(
     (width: number, height: number): StarProps[] => {
@@ -109,7 +104,8 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
   return (
     <div
       ref={containerRef}
-      className={cn("h-full w-full absolute inset-0", className)}
+      className={cn("absolute inset-0", className)}
+      style={{ height: "100%", width: "100vw", pointerEvents: "none" }}
     >
       <svg preserveAspectRatio="none" className="h-full w-full bg-transparent">
         <rect width="100%" height="100%" fill="none" />

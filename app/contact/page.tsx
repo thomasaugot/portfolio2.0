@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
             }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
-            <h1 className="mb-2">Initiate contact</h1>
+            <h1 className="mb-2">Get in touch</h1>
             <TitleUnderline />
           </motion.div>
           <motion.div

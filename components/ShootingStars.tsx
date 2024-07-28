@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 interface ShootingStar {
   id: number;
@@ -42,6 +42,7 @@ const getRandomStartPoint = () => {
       return { x: 0, y: 0, angle: 45 };
   }
 };
+
 const ShootingStars: React.FC<ShootingStarsProps> = ({
   minSpeed = 10,
   maxSpeed = 30,
@@ -119,6 +120,7 @@ const ShootingStars: React.FC<ShootingStarsProps> = ({
     <svg
       ref={svgRef}
       className={cn("w-full h-full absolute inset-0", className)}
+      style={{ overflow: "hidden" }}
     >
       {star && (
         <rect

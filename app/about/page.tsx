@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import profileImage from "@/assets/img/profile.webp";
 import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
+import BackToTop from "@/components/BackToTop";
+import Skills from "@/components/Skills";
 
 const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -27,11 +29,12 @@ const About: React.FC = () => {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-8 my-20">
+      <main className="flex min-h-screen flex-col items-center justify-between p-8 my-24">
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
             initial={{ y: 100, opacity: 0 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 40,
@@ -92,6 +95,7 @@ const About: React.FC = () => {
             </motion.div>
           </div>
         </div>
+        <Skills />
       </main>
       <Footer />
     </>

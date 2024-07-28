@@ -31,6 +31,7 @@ const config: Config = {
       animation: {
         pulse: "pulse 1.5s infinite",
         rotate: "rotate 1s linear",
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
       },
       keyframes: {
         pulse: {
@@ -41,6 +42,16 @@ const config: Config = {
         rotate: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
+        },
+        orbit: {
+          "0%": {
+            transform:
+              "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+          },
+          "100%": {
+            transform:
+              "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+          },
         },
       },
     },
