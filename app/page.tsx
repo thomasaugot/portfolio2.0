@@ -1,10 +1,9 @@
 "use client";
 
-import ShootingStars from "@/components/ShootingStars";
-import { StarsBackground } from "@/components/StarsBackground";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import GradientButton from "@/components/GradientButton";
 import "./globals.css";
 
 export const TypewriterEffect = ({
@@ -92,8 +91,17 @@ export const TypewriterEffect = ({
   );
 };
 
-// Usage in your Home component
 export default function Home() {
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const words = [
     { text: "Hi" },
     { text: "there!" },
@@ -108,9 +116,18 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center max-w-[100%] lg:max-w-[55vw] mx-auto">
-      <ShootingStars />
-      <StarsBackground />
       <TypewriterEffect words={words} />
+      <div className="min-h-[100px] flex items-center justify-center">
+        {showButton && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <GradientButton href="/about">Explore</GradientButton>
+          </motion.div>
+        )}
+      </div>
     </main>
   );
 }

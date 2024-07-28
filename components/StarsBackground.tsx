@@ -16,13 +16,7 @@ interface StarProps {
   twinkleSpeed: number | null;
 }
 
-export const Star: React.FC<StarProps> = ({
-  x,
-  y,
-  radius,
-  opacity,
-  twinkleSpeed,
-}) => (
+const Star: React.FC<StarProps> = ({ x, y, radius, opacity, twinkleSpeed }) => (
   <circle cx={x} cy={y} r={radius} fill="white" opacity={opacity}>
     {twinkleSpeed !== null && (
       <animate
@@ -126,3 +120,5 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
     </div>
   );
 };
+
+export default StarsBackground;

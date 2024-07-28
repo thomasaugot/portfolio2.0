@@ -50,10 +50,7 @@ export const TypewriterEffect = ({
             <motion.span
               initial={{}}
               key={`char-${index}`}
-              className={cn(
-                `dark:text-white text-white opacity-0 hidden`,
-                word.className
-              )}
+              className={cn(`opacity-0 hidden`, word.className)}
             >
               {char}
             </motion.span>
@@ -64,7 +61,6 @@ export const TypewriterEffect = ({
     </motion.div>
   );
 
-  // Find the index of the word "Thomas,"
   const lineBreakIndex = wordsArray.findIndex(
     (word) => word.text.join("") === "Thomas,"
   );
@@ -76,11 +72,8 @@ export const TypewriterEffect = ({
         className
       )}
     >
-      {/* Render the words before the line break */}
       {renderWords(wordsArray.slice(0, lineBreakIndex + 1))}
-      {/* Line break */}
       <div className="block h-1"></div>
-      {/* Render the words after the line break */}
       {renderWords(wordsArray.slice(lineBreakIndex + 1))}
       <motion.span
         initial={{
@@ -95,7 +88,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
+          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-primary-text",
           cursorClassName
         )}
       ></motion.span>
@@ -110,10 +103,10 @@ export default function Home() {
     { text: "I" },
     { text: "am" },
     { text: "Thomas," },
-    { text: "Web", className: "text-blue-500 dark:text-blue-500" },
-    { text: "&", className: "text-blue-500 dark:text-blue-500" },
-    { text: "Mobile", className: "text-blue-500 dark:text-blue-500" },
-    { text: "Developer", className: "text-blue-500 dark:text-blue-500" },
+    { text: "Web", className: "text-primary-text" },
+    { text: "&", className: "text-primary-text" },
+    { text: "Mobile", className: "text-primary-text" },
+    { text: "Developer", className: "text-primary-text" },
   ];
 
   return (

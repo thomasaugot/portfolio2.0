@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import TitleUnderline from "./TitleUnderline";
+import { FaHome } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [activeLink, setActiveLink] = useState("");
@@ -20,16 +22,19 @@ const Navbar = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    // Set the active link based on the current path
+    setActiveLink(window.location.pathname);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   const navItems = [
-    { id: 1, text: "About", target: "about" },
-    { id: 2, text: "Projects", target: "projects" },
-    { id: 3, text: "Blog", target: "blog" },
-    { id: 4, text: "Contact", target: "contact" },
+    { id: 1, text: "About", target: "/about" },
+    { id: 2, text: "Projects", target: "/projects" },
+    { id: 3, text: "Blog", target: "/blog" },
+    { id: 4, text: "Contact", target: "/contact" },
   ];
 
   return (
@@ -62,16 +67,25 @@ const Navbar = () => {
               isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
+            {activeLink !== "/" && (
+              <div className="hidden lg:flex items-center mr-8 z-10">
+                <Link href="/" onClick={() => setActiveLink("/")}>
+                  <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300" />
+                </Link>
+              </div>
+            )}
             {navItems.map((item) => (
               <li
                 key={item.id}
                 className="font-orbitron z-50 tracking-wider p-4 md:p-6 rounded-xl font-medium text-white text-3xl md:text-4xl text-center cursor-pointer"
                 onClick={() => {
                   setActiveLink(item.target);
-                  handleClick();
+                  setIsOpen(false);
+                  window.location.href = item.target;
                 }}
               >
-                <Link href={item.target}>{item.text}</Link>
+                {item.text}
+                {activeLink === item.target && <TitleUnderline />}
               </li>
             ))}
           </ul>
@@ -84,21 +98,29 @@ const Navbar = () => {
           } top-6 2xl:top-4`}
         >
           <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[14vh] bg-clip-padding backdrop-blur-sm px-10"></div>
-          {/* Logo */}
-          <div className="hidden lg:flex justify-evenly ml-auto gap-8 mr-24">
+          <div className="hidden lg:flex justify-evenly ml-auto gap-8 mr-4">
+            {activeLink !== "/" && (
+              <div className="hidden lg:flex items-center mr-8 z-10">
+                <Link href="/" onClick={() => setActiveLink("/")}>
+                  <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300" />
+                </Link>
+              </div>
+            )}
             {navItems.map((item) => (
-              <Link
-                key={item.id}
-                href={item.target}
-                className={`py-1 text-white font-regular relative m-1 cursor-pointer hover:scale-110 text-lg tracking-wide font-regular font-orbitron`}
-              >
-                {item.text}
-                <span
-                  className={`absolute inset-x-0 inset-y-8 h-1 bg-primary transition-all duration-300 ease-in-out ${
-                    activeLink === item.target ? "w-full" : "w-0"
-                  }`}
-                ></span>
-              </Link>
+              <div key={item.id} className="relative">
+                <Link
+                  href={item.target}
+                  className={`py-1 text-white font-regular cursor-pointer hover:scale-110 relative m-1 text-lg tracking-wide font-regular font-orbitron`}
+                  onClick={() => setActiveLink(item.target)}
+                >
+                  {item.text}
+                </Link>
+                {activeLink === item.target && (
+                  <div className="absolute w-full left-0 -bottom-4">
+                    <TitleUnderline />
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
