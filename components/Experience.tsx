@@ -5,6 +5,10 @@ import TitleUnderline from "./TitleUnderline";
 import ExperienceCard from "./ExperienceCard";
 import frigateLogo from "@/assets/img/frigate.webp";
 import oslyLogo from "@/assets/img/osly.png";
+import eurafriqueLogo from "@/assets/img/eurafrique.jpeg";
+import upworkLogo from "@/assets/img/upwork.png";
+import qualentumLogo from "@/assets/img/ironhack.png";
+import ironhackLogo from "@/assets/img/ironhack.png";
 
 interface ExperienceProps {
   title: string;
@@ -22,16 +26,52 @@ const experiences: ExperienceProps[] = [
     startDate: "Dec 2023",
     endDate: "Present",
     description:
-      "Developing web & mobile applications in React, React Native, Vite, Flutterflow and PostgreSQL",
+      "Developing web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow and PostgreSQL",
     logo: frigateLogo,
+  },
+  {
+    title: "Frontend Developer - React",
+    company: "Qualentum",
+    startDate: "Apr 2024",
+    endDate: "Aug 2024",
+    description:
+      "Bootcamp specializing in core frontend development - React.JS",
+    logo: qualentumLogo,
   },
   {
     title: "React Native Developer",
     company: "Osly Solutions",
     startDate: "Jul 2023",
     endDate: "Dec 2023",
-    description: "Developing a mobile app using React Native and Supabase",
+    description:
+      "Developed a mobile app using React Native, Typescript and Supabase",
     logo: oslyLogo,
+  },
+  {
+    title: "Web Developer",
+    company: "Eurafrique",
+    startDate: "Apr 2023",
+    endDate: "Nov 2023",
+    description:
+      "Developed a mutilingual website using React, Scss and Supabase",
+    logo: eurafriqueLogo,
+  },
+  {
+    title: "Freelance Web Developer",
+    company: "Upwork",
+    startDate: "Feb 2023",
+    endDate: "Present",
+    description:
+      "Provided freelance web development services using React, NextJS, Typescript, Tailwind and more",
+    logo: upworkLogo,
+  },
+  {
+    title: "Fullstack Developer - MERN",
+    company: "Ironhack",
+    startDate: "Nov 2022",
+    endDate: "Feb 2023",
+    description: "Bootcamp specializing in fullstack development - MERN",
+    logo: ironhackLogo,
   },
 ];
 
