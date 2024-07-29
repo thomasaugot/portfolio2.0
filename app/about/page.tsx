@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 import profileImage from "@/assets/img/profile.webp";
 import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
-import BackToTop from "@/components/BackToTop";
 import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
 
 const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -96,6 +96,7 @@ const About: React.FC = () => {
           </div>
         </div>
         <Skills />
+        <Experience />
       </main>
       <Footer />
     </>

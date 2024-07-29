@@ -72,7 +72,7 @@ const Skills: React.FC = () => {
           }}
           className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 transition-all duration-1000 text-white md:mr-auto"
         >
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-semibold font-orbitron">
             {t("Frontend Development")}
           </h2>
           <p className="mt-4">
@@ -140,7 +140,9 @@ const Skills: React.FC = () => {
           }}
           className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 transition-all duration-1000 text-white md:ml-auto"
         >
-          <h2 className="text-2xl font-semibold">{t("Backend Development")}</h2>
+          <h2 className="text-2xl font-semibold font-orbitron">
+            {t("Backend Development")}
+          </h2>
           <p className="mt-4">
             {t(
               "Building robust server-side applications using technologies like Node.js, Express, SQL, noSQL databases and cloud services."
@@ -184,7 +186,6 @@ const Skills: React.FC = () => {
             />
           </Marquee>
         </motion.div>
-
         <motion.div
           whileInView={{ scale: 1, opacity: 1 }}
           initial={{ scale: 0.8, opacity: 0 }}
@@ -197,7 +198,7 @@ const Skills: React.FC = () => {
           }}
           className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 transition-all duration-1000 text-white md:mr-auto"
         >
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-2xl font-semibold font-orbitron">
             {t("Mobile App Development")}
           </h2>
           <p className="mt-4">

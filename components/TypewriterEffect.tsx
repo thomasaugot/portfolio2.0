@@ -1,20 +1,22 @@
 "use client";
 
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
 
-export const TypewriterEffect = ({
-  words,
-  className,
-  cursorClassName,
-}: {
+interface TypewriterEffectProps {
   words: {
     text: string;
     className?: string;
   }[];
   className?: string;
   cursorClassName?: string;
+}
+
+const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
+  words,
+  className,
+  cursorClassName,
 }) => {
   const wordsArray = words.map((word) => ({
     ...word,
@@ -40,17 +42,19 @@ export const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
-  const renderWords = (wordList: typeof wordsArray) => (
+  const renderWords = () => (
     <motion.div ref={scope} className="inline">
-      {wordList.map((word, idx) => (
+      {wordsArray.map((word, idx) => (
         <div key={`word-${idx}`} className="inline-block">
           {word.text.map((char, index) => (
             <motion.span
-              initial={{}}
               key={`char-${index}`}
-              className={cn(`opacity-0 hidden`, word.className)}
+              className={cn(
+                "dark:text-white text-white opacity-0 hidden font-orbitron mb-4",
+                word.className
+              )}
             >
               {char}
             </motion.span>
@@ -58,60 +62,32 @@ export const TypewriterEffect = ({
           &nbsp;
         </div>
       ))}
-    </motion.div>
-  );
-
-  const lineBreakIndex = wordsArray.findIndex(
-    (word) => word.text.join("") === "Thomas,"
-  );
-
-  return (
-    <div
-      className={cn(
-        "p-2 text-5xl md:text-3xl lg:text-7xl font-bold text-center",
-        className
-      )}
-    >
-      {renderWords(wordsArray.slice(0, lineBreakIndex + 1))}
-      <div className="block h-1"></div>
-      {renderWords(wordsArray.slice(lineBreakIndex + 1))}
       <motion.span
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           duration: 0.8,
           repeat: Infinity,
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-primary-text",
+          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
           cursorClassName
         )}
       ></motion.span>
+    </motion.div>
+  );
+
+  return (
+    <div
+      className={cn(
+        "p-2 text-5xl md:text-3xl lg:text-5xl font-bold text-center mt-[12vh]",
+        className
+      )}
+    >
+      {renderWords()}
     </div>
   );
 };
 
-export default function Home() {
-  const words = [
-    { text: "Hi" },
-    { text: "there!" },
-    { text: "I" },
-    { text: "am" },
-    { text: "Thomas," },
-    { text: "Web", className: "text-primary-text" },
-    { text: "&", className: "text-primary-text" },
-    { text: "Mobile", className: "text-primary-text" },
-    { text: "Developer", className: "text-primary-text" },
-  ];
-
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center leading-12">
-      <TypewriterEffect words={words} />
-    </main>
-  );
-}
+export default TypewriterEffect;
