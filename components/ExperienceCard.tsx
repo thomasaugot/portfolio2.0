@@ -31,7 +31,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       }}
       viewport={{ once: true }}
     >
-      <li className="mb-10 ms-12">
+      <li className="mb-10 ms-12 font-roboto">
         <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full -start-3 ring-4 ring-white dark:ring-gray-900 dark:bg-blue-900">
           <Image
             src={logo}
@@ -47,10 +47,10 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         <h3 className="flex items-center mb-2 text-lg font-semibold text-white">
           {company}
         </h3>
-        <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+        <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
           {startDate} - {endDate}
         </time>
-        <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-4 text-base font-normal text-gray-500 ">
           {description}
         </p>
       </li>

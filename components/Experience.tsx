@@ -26,7 +26,7 @@ const experiences: ExperienceProps[] = [
     startDate: "Dec 2023",
     endDate: "Present",
     description:
-      "Developing web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow and PostgreSQL",
+      "Developing web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow, Firebase and PostgreSQL",
     logo: frigateLogo,
   },
   {
@@ -90,12 +90,29 @@ const Experience: React.FC = () => {
           ease: "easeOut",
         }}
         viewport={{ once: true }}
-        className="text-4xl font-bold mb-8 font-orbitron text-white px-4 my-20"
+        className="text-4xl font-bold mb-8 font-orbitron text-white px-4 my-24"
       >
-        <h1 className="my-4">{t("My Experience")}</h1>
+        <h1 className="my-4">{t("Certified, experienced & passionate")}</h1>
         <TitleUnderline />
       </motion.div>
-
+      <motion.p
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: 100, opacity: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 40,
+          delay: 0.5,
+          ease: "easeOut",
+        }}
+        viewport={{ once: true }}
+        className="text-lg font-sm mb-16 font-roboto text-white px-auto text-center px-4"
+      >
+        With nearly two years of experience, I’ve had the opportunity to
+        contribute to and complete over 15 projects of varying sizes. These
+        projects range from personal endeavors to startup initiatives. Through
+        these experiences, I have developed the ability to work effectively both
+        independently and as part of a team.
+      </motion.p>
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
         {experiences.map((exp, index) => (
           <ExperienceCard

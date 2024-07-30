@@ -9,6 +9,7 @@ import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
+import GradientButton from "@/components/GradientButton";
 
 const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -97,6 +98,15 @@ const About: React.FC = () => {
         </div>
         <Skills />
         <Experience />
+        <div className="min-h-[100px] flex items-center justify-center mt-12">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <GradientButton href="/projects">Explore my work</GradientButton>
+          </motion.div>
+        </div>
       </main>
       <Footer />
     </>

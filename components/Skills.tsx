@@ -56,7 +56,7 @@ const Skills: React.FC = () => {
         viewport={{ once: true }}
         className="text-4xl font-bold mb-8 font-orbitron text-white px-4 my-20"
       >
-        <h1 className="my-4">{t("My Skills")}</h1>
+        <h1 className="my-4">{t("Exploring the wonders of coding")}</h1>
         <TitleUnderline />
       </motion.div>
       <div className="flex flex-col items-center gap-8 max-w-[80vw]">

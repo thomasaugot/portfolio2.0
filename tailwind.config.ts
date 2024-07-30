@@ -32,6 +32,8 @@ const config: Config = {
         pulse: "pulse 1.5s infinite",
         rotate: "rotate 1s linear",
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
         pulse: {
@@ -42,6 +44,11 @@ const config: Config = {
         rotate: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
+        },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
         },
         orbit: {
           "0%": {
