@@ -24,6 +24,7 @@ const Contact: React.FC = () => {
               delay: 0.5,
               ease: "easeOut",
             }}
+            viewport={{ once: true }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
             <h1 className="mb-2">Get in touch</h1>
@@ -44,6 +45,7 @@ const Contact: React.FC = () => {
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
             initial={{ y: 100, opacity: 0 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               stiffness: 40,
@@ -61,6 +63,7 @@ const Contact: React.FC = () => {
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: "110%", opacity: 0 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 40,
@@ -82,6 +85,7 @@ const Contact: React.FC = () => {
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: "110%", opacity: 0 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 40,
@@ -103,6 +107,7 @@ const Contact: React.FC = () => {
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
               initial={{ x: "110%", opacity: 0 }}
+              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 40,

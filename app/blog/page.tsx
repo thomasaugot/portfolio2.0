@@ -200,13 +200,24 @@ const Blog: React.FC = () => {
             <h1 className="my-4">Blog articles</h1>
             <TitleUnderline />
           </motion.div>
-          <p className="text-lg font-sm mb-6 font-roboto px-auto text-center px-4 text-white">
+          <motion.p
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              stiffness: 40,
+              delay: 0.5,
+              ease: "easeOut",
+            }}
+            className="text-lg font-sm mb-6 font-roboto px-auto text-center px-4 text-white"
+          >
             As much as coding itself, I love sharing the result of my research.
             We all face challenges when working on a project, and so I wish to
             contribute the vast community of devs by sharing my solutions to
             various problems I encountered. Here is a collection of my latest
             writings on technology and development, all available on Medium.
-          </p>
+          </motion.p>
         </div>
         <div className="w-full mb-8">
           {blogs.slice(0, visibleBlogs).map((blog, index) => (
@@ -226,6 +237,7 @@ const Blog: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
+              viewport={{ once: true }}
             >
               <GradientButton onClick={handleLoadMore}>
                 Load More Articles

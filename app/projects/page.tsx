@@ -256,6 +256,7 @@ const Projects: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 1 }}
             >
               <GradientButton onClick={handleLoadMore}>
