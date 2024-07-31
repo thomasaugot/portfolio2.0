@@ -167,7 +167,7 @@ const projects = [
   {
     title: "Todayzzz Todos",
     description:
-      "A drag & drop todo app to organize your daily tasks I built to practice PostgrSQL, Typescript, SCSS and Jest.",
+      "A drag & drop todo app to organize your daily tasks I built to practice PostgrSQL, Typescript, SCSS and Jest. It features a dark/light mode.",
     techStack: [
       "React.JS",
       "SCSS",
@@ -183,7 +183,7 @@ const projects = [
   {
     title: "Pickle Rick vs Rats - The Game",
     description:
-      "My first ever coding project and even though it is basic, for being the first it holds a special place in my career. A cool Javascript shooting game that you can try on a desktop, kill the angry rats!",
+      "My first ever coding project and even though it is basic, for being the first it holds a special place in my heart. A cool Javascript shooting game that you can try on a desktop, kill the angry rats!",
     techStack: ["HTML", "CSS", "Javascript"],
     images: [pickleRickGame1, pickleRickGame2, pickleRickGame3],
     githubLink: "https://github.com/thomasaugot/project-js-shooting-game",

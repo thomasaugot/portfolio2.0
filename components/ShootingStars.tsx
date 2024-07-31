@@ -119,7 +119,7 @@ const ShootingStars: React.FC<ShootingStarsProps> = ({
   return (
     <svg
       ref={svgRef}
-      className={cn("w-full h-full absolute inset-0", className)}
+      className={cn("w-full h-full absolute inset-0 -z-1", className)}
       style={{ overflow: "hidden" }}
     >
       {star && (
