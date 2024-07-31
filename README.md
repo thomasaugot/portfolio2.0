@@ -2,7 +2,7 @@
 
 My new portfolio website using NextJS, Typescript, Tailwind
 
-Live site: https://portfolio2-0-puce.vercel.app/
+Live site: https://thomasaugot.com/
 
 ## Getting Started
 
