@@ -23,10 +23,10 @@ const Home = () => {
     { text: "I" },
     { text: "am" },
     { text: "Thomas," },
-    { text: "Web", className: "text-blue-500 dark:text-blue-500" },
-    { text: "&", className: "text-blue-500 dark:text-blue-500" },
-    { text: "Mobile", className: "text-blue-500 dark:text-blue-500" },
-    { text: "Developer", className: "text-blue-500 dark:text-blue-500" },
+    { text: "Web", className: "text-blue-500" },
+    { text: "&", className: "text-blue-500" },
+    { text: "Mobile", className: "text-blue-500" },
+    { text: "Developer", className: "text-blue-500" },
   ];
 
   return (

@@ -174,7 +174,7 @@ const blogs = [
 ];
 
 const Blog: React.FC = () => {
-  const [visibleBlogs, setVisibleBlogs] = useState(2);
+  const [visibleBlogs, setVisibleBlogs] = useState(4);
   const { t } = useTranslation();
 
   const handleLoadMore = () => {
