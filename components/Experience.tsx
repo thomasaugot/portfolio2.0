@@ -13,6 +13,7 @@ import ironhackLogo from "@/assets/img/ironhack.png";
 interface ExperienceProps {
   title: string;
   company: string;
+  place: string;
   startDate: string;
   endDate: string;
   description: string;
@@ -23,6 +24,7 @@ const experiences: ExperienceProps[] = [
   {
     title: "Software Developer",
     company: "Frigate",
+    place: "London, remote",
     startDate: "Dec 2023",
     endDate: "Present",
     description:
@@ -32,6 +34,7 @@ const experiences: ExperienceProps[] = [
   {
     title: "Frontend Developer - React",
     company: "Qualentum",
+    place: "Madrid, remote",
     startDate: "Apr 2024",
     endDate: "Aug 2024",
     description:
@@ -41,6 +44,7 @@ const experiences: ExperienceProps[] = [
   {
     title: "React Native Developer",
     company: "Osly Solutions",
+    place: "Nantes, remote",
     startDate: "Jul 2023",
     endDate: "Dec 2023",
     description:
@@ -50,6 +54,7 @@ const experiences: ExperienceProps[] = [
   {
     title: "Web Developer",
     company: "Eurafrique",
+    place: "Strasbourg, remote",
     startDate: "Apr 2023",
     endDate: "Nov 2023",
     description:
@@ -59,6 +64,7 @@ const experiences: ExperienceProps[] = [
   {
     title: "Freelance Web Developer",
     company: "Upwork",
+    place: "Remote",
     startDate: "Feb 2023",
     endDate: "Present",
     description:
@@ -68,6 +74,7 @@ const experiences: ExperienceProps[] = [
   {
     title: "Fullstack Developer - MERN",
     company: "Ironhack",
+    place: "Paris, remote",
     startDate: "Nov 2022",
     endDate: "Feb 2023",
     description: "Bootcamp specializing in fullstack development - MERN",
@@ -119,6 +126,7 @@ const Experience: React.FC = () => {
             key={index}
             title={exp.title}
             company={exp.company}
+            place={exp.place}
             startDate={exp.startDate}
             endDate={exp.endDate}
             description={exp.description}

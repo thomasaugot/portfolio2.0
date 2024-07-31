@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 interface ExperienceCardProps {
   title: string;
   company: string;
+  place: string;
   startDate: string;
   endDate: string;
   description: string;
@@ -14,6 +15,7 @@ interface ExperienceCardProps {
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
   title,
   company,
+  place,
   startDate,
   endDate,
   description,
@@ -45,7 +47,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           {title}
         </h3>
         <h3 className="flex items-center mb-2 text-lg font-semibold text-white">
-          {company}
+          {company} - {place}
         </h3>
         <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
           {startDate} - {endDate}

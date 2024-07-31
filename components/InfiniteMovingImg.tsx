@@ -5,14 +5,10 @@ import Image from "next/image";
 
 export const InfiniteMovingImg = ({
   items,
-  direction = "left",
-  speed = "fast",
   pauseOnHover = true,
   className,
 }: {
   items: { src: string }[];
-  direction?: "left" | "right";
-  speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
 }) => {
@@ -20,39 +16,31 @@ export const InfiniteMovingImg = ({
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    addAnimation();
-  }, []);
-
-  const [start, setStart] = useState(false);
-
-  function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
+        scrollerRef.current?.appendChild(duplicatedItem);
       });
 
-      getSpeed();
-      setStart(true);
-    }
-  }
+      const totalWidth = Array.from(scrollerRef.current.children).reduce(
+        (sum, child) => sum + (child as HTMLElement).offsetWidth,
+        0
+      );
 
-  const getSpeed = () => {
-    if (containerRef.current) {
-      const durations = {
-        fast: "20s",
-        normal: "40s",
-        slow: "80s",
-      };
+      const speed = 120; // in pixels per second
+      const duration = totalWidth / speed;
+
       containerRef.current.style.setProperty(
         "--animation-duration",
-        durations[speed]
+        `${duration}s`
       );
+
+      setStart(true);
     }
-  };
+  }, []);
+
+  const [start, setStart] = useState(false);
 
   return (
     <div
@@ -65,11 +53,8 @@ export const InfiniteMovingImg = ({
           start ? "animate-scroll" : ""
         } ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}`}
         style={{
-          animationDirection: direction === "left" ? "normal" : "reverse",
-          animationDuration:
-            containerRef.current?.style.getPropertyValue(
-              "--animation-duration"
-            ) || "40s",
+          animationDirection: "normal",
+          animationDuration: `var(--animation-duration)`,
           animationTimingFunction: "linear",
           animationIterationCount: "infinite",
         }}
@@ -78,9 +63,6 @@ export const InfiniteMovingImg = ({
           <li
             className="relative flex-shrink-0 w-[300px] h-[200px] overflow-hidden"
             key={idx}
-            style={{
-              animationDirection: idx % 2 === 0 ? "normal" : "reverse",
-            }}
           >
             <div className="relative w-full h-full">
               <Image
