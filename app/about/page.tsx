@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
@@ -15,18 +15,18 @@ const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 992);
-    };
+  const handleResize = useCallback(() => {
+    setIsDesktop(window.innerWidth >= 992);
+  }, []);
 
+  useEffect(() => {
     handleResize();
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   return (
     <>
@@ -92,6 +92,8 @@ const About: React.FC = () => {
                 src={profileImage}
                 alt="profile"
                 className="rounded-full border-2 border-white shadow-lg object-cover mx-auto w-full md:w-[30vw]"
+                placeholder="blur"
+                priority
               />
             </motion.div>
           </div>
