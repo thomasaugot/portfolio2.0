@@ -7,13 +7,18 @@ import Footer from "@/components/Footer";
 import profileImage from "@/assets/img/profile.webp";
 import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
-import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import GradientButton from "@/components/GradientButton";
+import dynamic from "next/dynamic";
+import { useDebounce } from "use-debounce";
+
+const Skills = dynamic(() => import("@/components/Skills"));
+const Experience = dynamic(() => import("@/components/Experience"));
+const GradientButton = dynamic(() => import("@/components/GradientButton"));
 
 const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const { t } = useTranslation();
+  const [x, setX] = useState(0);
+  const [debounceX] = useDebounce(x, 150);
 
   const handleResize = useCallback(() => {
     setIsDesktop(window.innerWidth >= 992);
@@ -52,6 +57,7 @@ const About: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               initial={{ y: 100, opacity: 0 }}
               viewport={{ once: true }}
+              animate={{ x: debounceX }}
               transition={{
                 type: "spring",
                 stiffness: 40,

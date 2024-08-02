@@ -2,37 +2,24 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
-import reactLogo from "@/assets/img/react-logo.png";
-import muiLogo from "@/assets/img/MUI.png";
-import typescriptLogo from "@/assets/img/typescript-logo.png";
-import nextjsLogo from "@/assets/img/nextjs.png";
-import reduxLogo from "@/assets/img/redux.png";
-import tailwindLogo from "@/assets/img/Tailwind_CSS.png";
-import jestLogo from "@/assets/img/jest.png";
-import firebaseLogo from "@/assets/img/firebase.png";
-import supabaseLogo from "@/assets/img/supabase.png";
-import reactNativeLogo from "@/assets/img/react-native.png";
-import expoLogo from "@/assets/img/expo.png";
-import xcodeLogo from "@/assets/img/Xcode_14_icon.png";
-import androidStudioLogo from "@/assets/img/new-studio-logo-1.png";
-import flutterflowLogo from "@/assets/img/flutterflow.png";
-import figmaLogo from "@/assets/img/figma.png";
 import TitleUnderline from "./TitleUnderline";
+import { frontendSkills, backendSkills, mobileSkills } from "@/data/skills";
+import Image from "next/image";
 
-interface SkillImageProps {
-  src: string;
-  alt: string;
-  title: string;
-}
-
-const SkillImage: React.FC<SkillImageProps> = ({ src, alt, title }) => (
+const SkillImage: React.FC<{ src: string; alt: string; title: string }> = ({
+  src,
+  alt,
+  title,
+}) => (
   <div className="flex flex-col items-center mx-4">
     <div className="h-16">
-      <img
+      <Image
         src={src}
         alt={alt}
         title={title}
-        className="h-full object-contain"
+        width={150}
+        height={150}
+        className="h-full object-contain w-auto"
       />
     </div>
     <div className="subtitle pt-2 text-center text-white">{title}</div>
@@ -81,51 +68,9 @@ const Skills: React.FC = () => {
             )}
           </p>
           <Marquee speed={40} className="mt-4" autoFill={true}>
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png"
-              alt="HTML"
-              title="HTML"
-            />
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png"
-              alt="CSS"
-              title="CSS"
-            />
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png"
-              alt="JavaScript"
-              title="JavaScript"
-            />
-            <SkillImage
-              src="https://avatars.githubusercontent.com/u/317889?s=200&v=4"
-              alt="SCSS"
-              title="SCSS"
-            />
-            <SkillImage src={reactLogo.src} alt="React" title="React" />
-            <SkillImage
-              src={muiLogo.src}
-              alt="Material UI"
-              title="Material UI"
-            />
-            <SkillImage
-              src={typescriptLogo.src}
-              alt="Typescript"
-              title="Typescript"
-            />
-            <SkillImage src={nextjsLogo.src} alt="Next JS" title="Next JS" />
-            <SkillImage src={reduxLogo.src} alt="Redux" title="Redux" />
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/183898054-b3d693d4-dafb-4808-a509-bab54cf5de34.png"
-              alt="Bootstrap"
-              title="Bootstrap"
-            />
-            <SkillImage
-              src={tailwindLogo.src}
-              alt="Tailwind CSS"
-              title="Tailwind CSS"
-            />
-            <SkillImage src={jestLogo.src} alt="Jest Testing" title="Jest" />
-            <SkillImage src={figmaLogo.src} alt="Figma" title="Figma" />
+            {frontendSkills.map((skill) => (
+              <SkillImage key={skill.title} {...skill} />
+            ))}
           </Marquee>
         </motion.div>
         <motion.div
@@ -154,36 +99,9 @@ const Skills: React.FC = () => {
             direction={"right"}
             autoFill={true}
           >
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png"
-              alt="Node.js"
-              title="Node.js"
-            />
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png"
-              alt="Express"
-              title="Express"
-            />
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png"
-              alt="mongoDB"
-              title="MongoDB"
-            />
-            <SkillImage
-              src="https://user-images.githubusercontent.com/25181517/192107858-fe19f043-c502-4009-8c47-476fc89718ad.png"
-              alt="REST"
-              title="REST API"
-            />
-            <SkillImage
-              src={firebaseLogo.src}
-              alt="Firebase"
-              title="Firebase"
-            />
-            <SkillImage
-              src={supabaseLogo.src}
-              alt="Supabase"
-              title="Supabase"
-            />
+            {backendSkills.map((skill) => (
+              <SkillImage key={skill.title} {...skill} />
+            ))}
           </Marquee>
         </motion.div>
         <motion.div
@@ -207,23 +125,9 @@ const Skills: React.FC = () => {
             )}
           </p>
           <Marquee speed={40} className="mt-4" autoFill={true}>
-            <SkillImage
-              src={reactNativeLogo.src}
-              alt="React Native"
-              title="React Native"
-            />
-            <SkillImage src={expoLogo.src} alt="Expo" title="Expo" />
-            <SkillImage src={xcodeLogo.src} alt="Xcode" title="Xcode" />
-            <SkillImage
-              src={androidStudioLogo.src}
-              alt="Android Studio"
-              title="Android Studio"
-            />
-            <SkillImage
-              src={flutterflowLogo.src}
-              alt="FlutterFlow"
-              title="FlutterFlow"
-            />
+            {mobileSkills.map((skill) => (
+              <SkillImage key={skill.title} {...skill} />
+            ))}
           </Marquee>
         </motion.div>
       </div>
