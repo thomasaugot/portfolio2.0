@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import TitleUnderline from "./TitleUnderline";
 import { FaHome } from "react-icons/fa";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -107,6 +108,9 @@ const Navbar: React.FC = () => {
                 {activeLink === item.target && <TitleUnderline />}
               </li>
             ))}
+            <div className="flex justify-center items-center">
+              <LanguageSelector />
+            </div>
           </ul>
         </div>
       ) : (
@@ -143,6 +147,9 @@ const Navbar: React.FC = () => {
                 )}
               </div>
             ))}
+            <div className="flex justify-center items-center">
+              <LanguageSelector />
+            </div>
           </div>
         </div>
       )}
