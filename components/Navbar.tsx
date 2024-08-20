@@ -12,6 +12,7 @@ const Navbar: React.FC = () => {
   const [activeLink, setActiveLink] = useState("");
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [showHomeButton, setShowHomeButton] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -25,21 +26,17 @@ const Navbar: React.FC = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    // Set the active link based on the current path
     setActiveLink(window.location.pathname);
 
-    // Handle scroll event
     const handleScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
       if (scrollTop > lastScrollTop) {
-        // Scrolling down
         setIsVisible(false);
       } else {
-        // Scrolling up
         setIsVisible(true);
       }
-      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop); // For Mobile or negative scrolling
+      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -49,6 +46,18 @@ const Navbar: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollTop]);
+
+  useEffect(() => {
+    if (activeLink !== "/") {
+      const timer = setTimeout(() => {
+        setShowHomeButton(true);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    } else {
+      setShowHomeButton(false);
+    }
+  }, [activeLink]);
 
   const navItems = [
     { id: 1, text: "About", target: "/about" },
@@ -87,7 +96,7 @@ const Navbar: React.FC = () => {
               isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
-            {activeLink !== "/" && (
+            {showHomeButton && (
               <div className="hidden lg:flex items-center mr-8 z-10">
                 <Link href="/" onClick={() => setActiveLink("/")}>
                   <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300" />
@@ -124,7 +133,7 @@ const Navbar: React.FC = () => {
         >
           <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[14vh] bg-clip-padding backdrop-blur-sm px-10"></div>
           <div className="hidden lg:flex justify-evenly ml-auto gap-8 mr-4">
-            {activeLink !== "/" && (
+            {showHomeButton && (
               <div className="hidden lg:flex items-center mr-8 z-10">
                 <Link href="/" onClick={() => setActiveLink("/")}>
                   <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300" />

@@ -45,12 +45,14 @@ export default function RootLayout({
         <link rel="icon" href="./icon.png" sizes="any" />
       </Head>
       <body className={`${inter.className} bg-primary-bg`}>
-        <div className="relative min-h-screen flex flex-col">
-          <ShootingStars />
-          <StarsBackground />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-        </div>
+        <ClientSideWrapper>
+          <div className="relative min-h-screen flex flex-col">
+            <ShootingStars />
+            <StarsBackground />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+          </div>
+        </ClientSideWrapper>
       </body>
     </html>
   );
