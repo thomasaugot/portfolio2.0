@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 const {
   default: flattenColorPalette,
@@ -18,17 +17,20 @@ const config: Config = {
         "primary-bg": "#121212",
         "secondary-bg": "#282828",
         "primary-text": "#3B82F6",
-        "gradient-start": "#3B82F6",
-        "gradient-end": "#FF44EC",
+        "gradient-start": "#6D28D9",
+        "gradient-middle": "#3B82F6",
+        "gradient-end": "#14B8A6",
       },
       fontFamily: {
         roboto: ["var(--font-roboto)", "sans-serif"],
         orbitron: ["var(--font-orbitron)", "sans-serif"],
       },
       backgroundImage: {
-        "gradient-button": "var(--gradient-button)",
+        gradient:
+          "linear-gradient(266deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end))",
       },
       animation: {
+        blink: "blink 0.75s step-end infinite",
         pulse: "pulse 1.5s infinite",
         rotate: "rotate 1s linear",
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
@@ -36,6 +38,10 @@ const config: Config = {
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "1" },
+        },
         pulse: {
           "0%": { transform: "scale(0.9)" },
           "50%": { transform: "scale(1.2)" },
@@ -75,7 +81,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   addBase({
     ":root": {
       ...newVars,
-      "--gradient-button": `linear-gradient(266deg, var(--gradient-start), var(--gradient-end))`,
+      "--gradient": `linear-gradient(266deg, var(--button-gradient-start), var(--button-gradient-middle), var(--button-gradient-end))`,
     },
   });
 }

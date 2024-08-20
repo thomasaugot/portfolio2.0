@@ -104,8 +104,13 @@ export const StarsBackground: React.FC<StarsBackgroundProps> = ({
   return (
     <div
       ref={containerRef}
-      className={cn("absolute inset-0 -z-2", className)}
-      style={{ height: "100%", width: "100vw", pointerEvents: "none" }}
+      className={cn("absolute inset-0 -z-10", className)}
+      style={{
+        height: "100%",
+        width: "100%",
+        pointerEvents: "none",
+        background: "transparent",
+      }}
     >
       <svg preserveAspectRatio="none" className="h-full w-full bg-transparent">
         <rect width="100%" height="100%" fill="none" />

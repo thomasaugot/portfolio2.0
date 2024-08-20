@@ -14,49 +14,43 @@ interface ClientSideWrapperProps {
 }
 
 const ClientSideWrapper: React.FC<ClientSideWrapperProps> = ({ children }) => {
-  //   const [isI18nInitialized, setIsI18nInitialized] = useState(false);
-  //   const [isDesktop, setIsDesktop] = useState(false);
-  //   const [loaded, setLoaded] = useState(false);
+  const [isI18nInitialized, setIsI18nInitialized] = useState(false);
 
-  //   useEffect(() => {
-  //     i18n
-  //       .use(LanguageDetector)
-  //       .use(initReactI18next)
-  //       .init({
-  //         resources: {
-  //           en: { translation: enTranslation },
-  //           fr: { translation: frTranslation },
-  //           es: { translation: esTranslation },
-  //         },
-  //         fallbackLng: "en",
-  //         detection: {
-  //           order: ["localStorage", "navigator"],
-  //           caches: ["localStorage"],
-  //         },
-  //       })
-  //       .then(() => {
-  //         setIsI18nInitialized(true);
-  //       });
+  useEffect(() => {
+    i18n
+      .use(LanguageDetector)
+      .use(initReactI18next)
+      .init({
+        resources: {
+          en: { translation: enTranslation },
+          fr: { translation: frTranslation },
+          es: { translation: esTranslation },
+        },
+        fallbackLng: "en",
+        detection: {
+          order: ["localStorage", "navigator"],
+          caches: ["localStorage"],
+        },
+        react: {
+          useSuspense: false,
+        },
+      })
+      .then(() => {
+        setIsI18nInitialized(true);
+      });
 
-  //     // Scroll to top on mount
-  //     window.scrollTo(0, 0);
+    const handleResize = () => {};
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  //     // Set initial desktop state
-  //     setIsDesktop(window.innerWidth >= 1024);
-
-  //     // Handle resize events
-  //     const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
-  //     window.addEventListener("resize", handleResize);
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }, []);
-
-  //   if (!isI18nInitialized || !loaded) {
-  //     return (
-  //       <div className="w-screen h-screen bg-gray-900">
-  //         <Loading />
-  //       </div>
-  //     );
-  //   }
+  if (!isI18nInitialized) {
+    return (
+      <div className="w-screen h-screen bg-gray-900">
+        <Loading />
+      </div>
+    );
+  }
 
   return <>{children}</>;
 };

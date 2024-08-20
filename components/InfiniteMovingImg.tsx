@@ -28,7 +28,7 @@ export const InfiniteMovingImg = ({
         0
       );
 
-      const speed = 120; // in pixels per second
+      const speed = 90; // in pixels per second
       const duration = totalWidth / speed;
 
       containerRef.current.style.setProperty(

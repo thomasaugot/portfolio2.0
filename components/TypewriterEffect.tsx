@@ -1,91 +1,59 @@
 "use client";
 
-import { useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { motion, stagger, useAnimate, useInView } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface TypewriterEffectProps {
-  words: {
-    text: string;
-    className?: string;
-  }[];
-  className?: string;
-  cursorClassName?: string;
+  lines: string[];
 }
 
-const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
-  words,
-  className,
-  cursorClassName,
-}) => {
-  const wordsArray = words.map((word) => ({
-    ...word,
-    text: word.text.split(""),
-  }));
-
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
+const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
+  const [typedText, setTypedText] = useState<string[]>(
+    new Array(lines.length).fill("")
+  );
+  const [currentLine, setCurrentLine] = useState(0);
 
   useEffect(() => {
-    if (isInView) {
-      animate(
-        "span",
-        {
-          display: "inline-block",
-          opacity: 1,
-          width: "fit-content",
-        },
-        {
-          duration: 0.3,
-          delay: stagger(0.1),
-          ease: "easeInOut",
-        }
-      );
-    }
-  }, [isInView, animate]);
+    const typeLine = async (index: number) => {
+      if (index >= lines.length) return;
 
-  const renderWords = () => (
-    <motion.div ref={scope} className="inline">
-      {wordsArray.map((word, idx) => (
-        <div key={`word-${idx}`} className="inline-block">
-          {word.text.map((char, index) => (
-            <motion.span
-              key={`char-${index}`}
-              className={cn(
-                "dark:text-white text-white opacity-0 hidden font-orbitron mb-4",
-                word.className
-              )}
-            >
-              {char}
-            </motion.span>
-          ))}
-          &nbsp;
-        </div>
-      ))}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
-          cursorClassName
-        )}
-      ></motion.span>
-    </motion.div>
-  );
+      const text = lines[index];
+      let currentText = "";
+
+      for (let i = 0; i <= text.length; i++) {
+        currentText = text.slice(0, i);
+        setTypedText((prev) => {
+          const newText = [...prev];
+          newText[index] = currentText;
+          return newText;
+        });
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      setCurrentLine(index + 1);
+    };
+
+    typeLine(currentLine);
+  }, [currentLine]);
 
   return (
-    <div
-      className={cn(
-        "p-2 text-5xl md:text-3xl lg:text-5xl font-bold text-center mt-[12vh]",
-        className
-      )}
-    >
-      {renderWords()}
+    <div className="relative flex flex-col items-center text-center">
+      {lines.map((line, index) => (
+        <div
+          key={index}
+          className={`relative text-4xl lg:text-5xl font-bold font-orbitron mb-4
+            ${
+              index === lines.length - 1
+                ? "text-transparent bg-clip-text bg-gradient"
+                : "text-white"
+            }`}
+        >
+          {typedText[index]}
+          {index === currentLine && (
+            <span className="absolute right-0 bottom-0 w-1 h-12 bg-white animate-blink ml-2" />
+          )}
+        </div>
+      ))}
     </div>
   );
 };

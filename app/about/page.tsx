@@ -84,7 +84,7 @@ const About: React.FC = () => {
             </motion.div>
             <motion.div
               whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-              initial={{ x: "100%", opacity: 0, rotate: 880 }}
+              initial={{ x: "100%", opacity: 0, rotate: 180 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",

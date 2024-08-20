@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import TitleUnderline from "./TitleUnderline";
 import ExperienceCard from "./ExperienceCard";
 import frigateLogo from "@/assets/img/frigate.webp";
-import oslyLogo from "@/assets/img/osly.png";
-import eurafriqueLogo from "@/assets/img/eurafrique.jpeg";
-import upworkLogo from "@/assets/img/upwork.png";
-import qualentumLogo from "@/assets/img/ironhack.png";
-import ironhackLogo from "@/assets/img/ironhack.png";
+import oslyLogo from "@/assets/img/osly.webp";
+import eurafriqueLogo from "@/assets/img/eurafrique.webp";
+import upworkLogo from "@/assets/img/upwork.webp";
+import qualentumLogo from "@/assets/img/qualentum.webp";
+import ironhackLogo from "@/assets/img/ironhack.webp";
 
 interface ExperienceProps {
   title: string;

@@ -25,7 +25,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({
 
   return (
     <div className={`relative inline-flex group ${className}`}>
-      <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-button rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+      <div className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
       <button
         type={type}
         onClick={handleClick}

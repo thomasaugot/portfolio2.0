@@ -54,9 +54,28 @@ const BlogArticleCard: React.FC<BlogArticleCardProps> = ({
           href={mediumLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute bottom-6 right-6 text-blue-500 flex items-center"
+          className="absolute bottom-6 right-6 text-transparent bg-clip-text bg-gradient flex items-center"
         >
-          <FaMedium className="mr-2" /> Read on Medium
+          <svg
+            className="w-7 h-7 mt-2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <defs>
+              <linearGradient
+                id="heartGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#6D28D9" />
+                <stop offset="100%" stopColor="#14B8A6" />
+              </linearGradient>
+            </defs>
+            <FaMedium fill="url(#heartGradient)" />
+          </svg>
+          Read on Medium
         </a>
       </div>
     </motion.div>
