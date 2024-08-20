@@ -1,16 +1,22 @@
-"use client";
-
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface TypewriterEffectProps {
   lines: string[];
 }
 
 const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
+  const { i18n } = useTranslation();
   const [typedText, setTypedText] = useState<string[]>(
     new Array(lines.length).fill("")
   );
   const [currentLine, setCurrentLine] = useState(0);
+
+  useEffect(() => {
+    // Reset typedText and currentLine when language changes
+    setTypedText(new Array(lines.length).fill(""));
+    setCurrentLine(0);
+  }, [i18n.language]);
 
   useEffect(() => {
     const typeLine = async (index: number) => {

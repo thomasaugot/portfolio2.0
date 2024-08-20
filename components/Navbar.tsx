@@ -5,6 +5,7 @@ import Link from "next/link";
 import TitleUnderline from "./TitleUnderline";
 import { FaHome } from "react-icons/fa";
 import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +14,7 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [showHomeButton, setShowHomeButton] = useState(false);
+  const { t } = useTranslation();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -60,10 +62,10 @@ const Navbar: React.FC = () => {
   }, [activeLink]);
 
   const navItems = [
-    { id: 1, text: "About", target: "/about" },
-    { id: 2, text: "Projects", target: "/projects" },
-    { id: 3, text: "Blog", target: "/blog" },
-    { id: 4, text: "Contact", target: "/contact" },
+    { id: 1, text: t("About"), target: "/about" },
+    { id: 2, text: t("Projects"), target: "/projects" },
+    { id: 3, text: t("Blog"), target: "/blog" },
+    { id: 4, text: t("Contact"), target: "/contact" },
   ];
 
   return (
