@@ -9,8 +9,11 @@ import { IconContext } from "react-icons";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import TitleUnderline from "@/components/TitleUnderline";
+import { useTranslation } from "react-i18next";
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-8 my-20">
@@ -27,7 +30,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
-            <h1 className="mb-2">Get in touch</h1>
+            <h1 className="mb-2">{t("Get in touch")}</h1>
             <TitleUnderline />
           </motion.div>
           <motion.div
@@ -55,7 +58,7 @@ const Contact: React.FC = () => {
             className="text-gradient mt-10 mb-12"
           >
             <h1 className="text-4xl font-bold mb-2 font-orbitron text-white">
-              Connect with me
+              {t("Connect with me")}
             </h1>
             <TitleUnderline />
           </motion.div>

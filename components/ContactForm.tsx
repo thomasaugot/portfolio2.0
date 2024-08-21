@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import emailjs from "emailjs-com";
 import GradientButton from "./GradientButton";
+import { useTranslation } from "react-i18next";
 
 type FormInputs = {
   from_name: string;
@@ -12,6 +13,7 @@ type FormInputs = {
 };
 
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -41,7 +43,7 @@ const ContactForm: React.FC = () => {
       )
       .then(
         () => {
-          setStateMessage("Message sent!");
+          setStateMessage(t("Message sent!"));
           setIsSubmitting(false);
           reset();
           setTimeout(() => {
@@ -49,7 +51,7 @@ const ContactForm: React.FC = () => {
           }, 5000);
         },
         () => {
-          setStateMessage("Something went wrong, please try again later.");
+          setStateMessage(t("Something went wrong, please try again later."));
           setIsSubmitting(false);
           setTimeout(() => {
             setStateMessage(null);
@@ -68,14 +70,14 @@ const ContactForm: React.FC = () => {
         htmlFor="from_name"
         className="block text-left w-full font-orbitron text-white"
       >
-        Name
+        {t("Name")}
       </label>
       <input
         className="inputForm border-2 rounded p-2 w-full"
         id="from_name"
         type="text"
-        {...register("from_name", { required: "Name is required" })}
-        placeholder="John Doe"
+        {...register("from_name", { required: t("Name is required") })}
+        placeholder={t("John Doe")}
       />
       {errors.from_name && (
         <p className="text-red-500">{errors.from_name.message}</p>
@@ -85,20 +87,20 @@ const ContactForm: React.FC = () => {
         htmlFor="email"
         className="block text-left w-full font-orbitron text-white"
       >
-        Email
+        {t("Email")}
       </label>
       <input
         className="inputForm border-2 rounded p-2 w-full"
         id="email"
         type="email"
         {...register("email", {
-          required: "Email is required",
+          required: t("Email is required"),
           pattern: {
             value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
-            message: "Invalid email address",
+            message: t("Invalid email address"),
           },
         })}
-        placeholder="yourname@example.com"
+        placeholder={t("yourname@example.com")}
       />
       {errors.email && <p className="text-red-500">{errors.email.message}</p>}
 
@@ -106,13 +108,13 @@ const ContactForm: React.FC = () => {
         htmlFor="message"
         className="block text-left w-full font-orbitron text-white"
       >
-        Message
+        {t("Message")}
       </label>
       <textarea
         className="inputForm border-2 rounded p-2 w-full"
         id="message"
-        {...register("message", { required: "Message is required" })}
-        placeholder="What's on your mind?"
+        {...register("message", { required: t("Message is required") })}
+        placeholder={t("What's on your mind?")}
         rows={8}
       />
       {errors.message && (
@@ -120,9 +122,9 @@ const ContactForm: React.FC = () => {
       )}
 
       <GradientButton type="submit" className="mt-4">
-        {isSubmitting ? "Sending..." : "Send"}
+        {isSubmitting ? t("Sending...") : t("Send")}
       </GradientButton>
-      <div className="mt-4 text-center text-white text-">{stateMessage}</div>
+      <div className="mt-4 text-center text-white">{stateMessage}</div>
     </form>
   );
 };

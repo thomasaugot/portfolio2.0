@@ -63,7 +63,7 @@ const projects = [
   {
     title: "Wave Rider Surf Shop",
     description:
-      "A fully functional E-commerce website I built inspired by the island I call home: Fuerteventura. All your watersports gear in one place.",
+      "An E-commerce website I built inspired by the island I call home: Fuerteventura. All your watersports gear in one place.",
     techStack: [
       "Next.JS",
       "Typescript",
@@ -223,7 +223,7 @@ const Projects: React.FC = () => {
             }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
-            <h1 className="my-4">Check out my work</h1>
+            <h1 className="my-4">{t("Check out my work")}</h1>
             <TitleUnderline />
           </motion.div>
           <motion.p
@@ -238,12 +238,9 @@ const Projects: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg font-sm mb-16 font-roboto text-white px-auto text-center px-4"
           >
-            A selection of my finest personal work, each project a testament to
-            my passion and skills as a developer. These are the creations where
-            I had complete creative control and ownership, reflecting my unique
-            vision and expertise. From concept to completion, these projects are
-            truly mine, accurately representing my experience, creativity, and
-            technical proficiency.
+            {t(
+              "A selection of my finest personal work, each project a testament to my passion and skills as a developer. These are the creations where I had complete creative control and ownership, reflecting my unique vision and expertise. From concept to completion, these projects are truly mine, accurately representing my experience, creativity, and technical proficiency."
+            )}
           </motion.p>
         </div>
         <div className="w-full mb-8">
@@ -260,7 +257,7 @@ const Projects: React.FC = () => {
               transition={{ duration: 1 }}
             >
               <GradientButton onClick={handleLoadMore}>
-                Load More Projects
+                {t("Load More Projects")}
               </GradientButton>
             </motion.div>
           </div>

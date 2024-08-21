@@ -13,7 +13,6 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
   const [currentLine, setCurrentLine] = useState(0);
 
   useEffect(() => {
-    // Reset typedText and currentLine when language changes
     setTypedText(new Array(lines.length).fill(""));
     setCurrentLine(0);
   }, [i18n.language]);
@@ -43,11 +42,11 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
   }, [currentLine]);
 
   return (
-    <div className="relative flex flex-col items-center text-center">
+    <div className="relative flex flex-col items-center text-center ">
       {lines.map((line, index) => (
         <div
           key={index}
-          className={`relative text-4xl lg:text-5xl font-bold font-orbitron mb-4
+          className={`relative text-4xl lg:text-5xl font-bold font-orbitron mb-4 leading-relaxed
             ${
               index === lines.length - 1
                 ? "text-transparent bg-clip-text bg-gradient"

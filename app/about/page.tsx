@@ -16,7 +16,7 @@ const GradientButton = dynamic(() => import("@/components/GradientButton"));
 
 const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [x, setX] = useState(0);
   const [debounceX] = useDebounce(x, 150);
 
@@ -31,7 +31,7 @@ const About: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleResize]);
+  }, [handleResize, i18n.language]);
 
   return (
     <>
@@ -49,7 +49,7 @@ const About: React.FC = () => {
             }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
-            <h1 className="my-4">From France to the world</h1>
+            <h1 className="my-4">{t("From France to the world")}</h1>
             <TitleUnderline />
           </motion.div>
           <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between lg:mt-10 w-full">
@@ -112,7 +112,9 @@ const About: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <GradientButton href="/projects">Explore my work</GradientButton>
+            <GradientButton href="/projects">
+              {t("Explore my work")}
+            </GradientButton>
           </motion.div>
         </div>
       </main>

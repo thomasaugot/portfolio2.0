@@ -2,6 +2,7 @@ import React from "react";
 import { FaMedium } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface BlogArticleCardProps {
   title: string;
@@ -18,6 +19,8 @@ const BlogArticleCard: React.FC<BlogArticleCardProps> = ({
   mediumLink,
   date,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
@@ -35,7 +38,7 @@ const BlogArticleCard: React.FC<BlogArticleCardProps> = ({
         <div className="relative h-[200px]">
           <Image
             src={image}
-            alt={title}
+            alt={t(title)}
             layout="fill"
             objectFit="cover"
             className="rounded-xl"
@@ -44,11 +47,11 @@ const BlogArticleCard: React.FC<BlogArticleCardProps> = ({
       </div>
       <div className="w-full md:w-2/3 flex flex-col justify-between">
         <div>
-          <h2 className="text-2xl font-bold mb-2 text-white">{title}</h2>
-          <p className="text-gray-500 mb-4">{content}</p>
+          <h2 className="text-2xl font-bold mb-2 text-white">{t(title)}</h2>
+          <p className="text-gray-500 mb-4">{t(content)}</p>
         </div>
         <div className="flex justify-between items-center mt-4">
-          <span className="text-gray-500">{date}</span>
+          <span className="text-gray-500">{t(date)}</span>
         </div>
         <a
           href={mediumLink}
@@ -75,7 +78,7 @@ const BlogArticleCard: React.FC<BlogArticleCardProps> = ({
             </defs>
             <FaMedium fill="url(#heartGradient)" />
           </svg>
-          Read on Medium
+          {t("Read on Medium")}
         </a>
       </div>
     </motion.div>
