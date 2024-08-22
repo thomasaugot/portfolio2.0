@@ -6,6 +6,8 @@ import TitleUnderline from "./TitleUnderline";
 import { FaHome } from "react-icons/fa";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
+import ShootingStars from "./ShootingStars";
+import StarsBackground from "./StarsBackground";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,10 +96,13 @@ const Navbar: React.FC = () => {
             ></span>
           </div>
           <ul
-            className={`fixed z-40 lg:hidden left-0 top-0 w-full h-full bg-secondary-bg flex flex-col items-center justify-center transition-transform duration-500 ${
+            className={`fixed z-40 lg:hidden left-0 top-0 w-full h-full bg-primary-bg flex flex-col items-center justify-center transition-transform duration-500 ${
               isOpen ? "translate-x-0" : "-translate-x-full"
             }`}
           >
+            <div className="absolute inset-y-0 right-0 w-[2px] bg-gradient"></div>
+            <ShootingStars />
+            <StarsBackground />
             {showHomeButton && (
               <Link
                 href="/"
