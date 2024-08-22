@@ -20,7 +20,7 @@ const Experience: React.FC = () => {
           ease: "easeOut",
         }}
         viewport={{ once: true }}
-        className="text-4xl font-bold mb-8 font-orbitron text-white px-4 my-24"
+        className="text-center text-4xl font-bold mb-8 font-orbitron text-white px-4 my-24"
       >
         <h1 className="my-4">{t("Certified, experienced & passionate")}</h1>
         <TitleUnderline />

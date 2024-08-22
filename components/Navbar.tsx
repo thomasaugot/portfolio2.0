@@ -99,11 +99,15 @@ const Navbar: React.FC = () => {
             }`}
           >
             {showHomeButton && (
-              <div className="hidden lg:flex items-center mr-8 z-10">
-                <Link href="/" onClick={() => setActiveLink("/")}>
-                  <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300" />
-                </Link>
-              </div>
+              <Link
+                href="/"
+                onClick={() => {
+                  setIsOpen(false);
+                  setActiveLink("/");
+                }}
+              >
+                <FaHome className="text-white text-5xl mb-2 cursor-pointer hover:text-gray-300" />
+              </Link>
             )}
             {navItems.map((item) => (
               <li

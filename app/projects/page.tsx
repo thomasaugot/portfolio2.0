@@ -55,7 +55,7 @@ const Projects: React.FC = () => {
             transition={{
               type: "spring",
               stiffness: 40,
-              delay: 0.5,
+              delay: 0.7,
               ease: "easeOut",
             }}
             viewport={{ once: true }}

@@ -1,5 +1,3 @@
-// /data/blogs.tsx
-
 import article1 from "@/assets/img/blog-articles/article-1.webp";
 import article2 from "@/assets/img/blog-articles/article-2.webp";
 import article3 from "@/assets/img/blog-articles/article-3.webp";

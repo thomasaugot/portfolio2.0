@@ -49,7 +49,9 @@ const About: React.FC = () => {
             }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
-            <h1 className="my-4">{t("From France to the world")}</h1>
+            <h1 className="my-4">
+              {t("Coding my path: a world traveler's digital journey")}
+            </h1>
             <TitleUnderline />
           </motion.div>
           <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between lg:mt-10 w-full">

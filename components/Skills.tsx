@@ -41,7 +41,7 @@ const Skills: React.FC = () => {
           ease: "easeOut",
         }}
         viewport={{ once: true }}
-        className="text-4xl font-bold mb-8 font-orbitron text-white px-4 my-20"
+        className="text-center text-4xl font-bold mb-8 font-orbitron text-white px-4 my-20"
       >
         <h1 className="my-4">{t("Always expanding my horizons")}</h1>
         <TitleUnderline />

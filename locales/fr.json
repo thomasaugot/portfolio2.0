@@ -5,7 +5,7 @@
   "Hi there! I am Thomas,": "Bonjour! Je suis Thomas,",
   "Web & Mobile Developer": "Développeur Web & Mobile",
   "Explore": "Explorer",
-  "From France to the world": "Nantais, et citoyen du Monde",
+  "Coding my path: a world traveler's digital journey": "Explorateur jusque dans mon code : Toujours en quête de nouveaux défis",
   "Hi there! I am Thomas, a passionate developer hailing from Nantes, France. As an ex-globetrotter, I bring a global perspective and an insatiable appetite for challenges to the world of web and mobile development.": "Bonjour ! Je suis Thomas, développeur passionné originaire de Nantes. Ancien globe-trotter et accroc à l'aventure, j'apporte une perspective globale et une appétence insatiable pour les défis au monde du développement à la fois web et mobile.",
   "In today's rapidly changing digital landscape, my mission is clear: to enhance online presence and visibility for both businesses and individuals. While specializing in frontend development, my fullstack experience allows me to craft exceptional digital experiences and address any challenges that arise. By staying abreast of the latest tech trends, I ensure that my work adheres to modern design principles and the best practices in web and mobile development.": "Face à un paysage numérique en constante évolution, ma mission est claire : améliorer la présence en ligne et la visibilité à la fois pour les entreprises et les particuliers. Spécialisé dans le développement frontend, mon expérience fullstack me permet de créer des expériences numériques de qualité et de relever tous les défis qui se présentent. En restant à l'affût des dernières tendances technologiques, je veille à ce que mon travail respecte les principes de design modernes et les meilleures pratiques en matière de développement web et mobile.",
   "While my playground primarily revolves around JavaScript and its captivating frameworks, I am never confined by boundaries and always seek to expand my skillset!": "Si mon terrain de jeu tourne principalement autour de JavaScript et de ses frameworks, je ne suis jamais confiné par des limites et cherche toujours à élargir mes compétences !",
@@ -72,44 +72,6 @@
   "John Doe": "Jean Dupont",
   "Crafted with": "Développé avec",
   "by ": "par",
-  "projects": [
-    {
-      "name": "Charpente Menuiserie Durand",
-      "description": "Un site web dont j'ai moi-même pensé le design et que j'ai entièrement développé, pour une entreprise de charpente/menuiserie."
-    },
-    {
-      "name": "Wave Rider Surf Shop",
-      "description": "Un site de e-commerce fictif que j'ai créé en hommage à l'endroit que où j'ai passé beaucoup d'années, aussi paradis des sports nautiques : Fuerteventura."
-    },
-    {
-      "name": "Farmhouse Table",
-      "description": "Un site web de restaurant intégrant l'API Google Maps et un formulaire de réservation"
-    },
-    {
-      "name": "Kingpad",
-      "description": "Une page entièrement responsive que j'ai développée pour Kingworld Finance, en collaboration avec une équipe de designers et de développeurs, en dupliquant parfaitement un design Figma"
-    },
-    {
-      "name": "Attorneyster",
-      "description": "Une page d'accueil de site web de services juridiques, créée dans le cadre d'un défi de développement frontend que j'ai réalisé pour pratiquer Next.js et Tailwind CSS."
-    },
-    {
-      "name": "Todayzzz Todos",
-      "description": "Une application avec 'drag & drop' pour organiser vos tâches quotidiennes que j'ai construite pour pratiquer PostgrSQL, Typescript, SCSS et Jest"
-    },
-    {
-      "name": "Eurafrique",
-      "description": "Un site web entièrement responsif et multilingue (français, anglais, espagnol et arabe) que j'ai développé pour l'association Eurafrique.eu."
-    },
-    {
-      "name": "Partymates",
-      "description": "Une appli de type réseau social que j'ai créée pour connecter les gens afin qu'ils puissent voyager ensemble pour les festivals. Les utilisateurs peuvent créer un compte, s'abonner à des événements et interagir avec d'autres via la fonction de messagerie"
-    },
-    {
-      "name": "Pickle Rick vs Rats - The Game",
-      "description": "Mon premier projet de codage, un jeu de tir Javascript amusant, tuez les vilains rats !"
-    }
-  ],
   "waveRiderDescription": "Un site de e-commerce que j'ai créé inspiré par l'île où je vis : Fuerteventura. Tout votre matériel de sports nautiques au même endroit.",
   "cmdurandDescription": "Un site web dont j'ai moi-même pensé le design et que j'ai développé seul, pour une entreprise de charpente/menuiserie française.",
   "farmhouseDescription": "Un site web de restaurant intégrant l'API Google Maps et un formulaire de réservation",

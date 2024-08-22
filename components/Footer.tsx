@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
   return (
     <div
       ref={ref}
-      className="relative flex flex-col items-center text-center py-8 bg-primary-bg"
+      className="relative flex flex-col items-center text-center py-8 bg-primary-bg mb-4"
     >
       <BackToTop />
       <p className="text-white mb-4 flex items-center justify-center">
