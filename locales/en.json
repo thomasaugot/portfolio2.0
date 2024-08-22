@@ -1,40 +1,9 @@
 {
-  "projects": [
-    {
-      "name": "Charpente Menuiserie Durand",
-      "description": "A website I designed and developed for a French construction company."
-    },
-    {
-      "name": "Wave Rider Surf Shop",
-      "description": "A fake e-commerce website I build as a tribute to the place I call home and water sports heaven: Fuerteventura"
-    },
-    {
-      "name": "Farmhouse Table",
-      "description": "A restaurant website integrating Google Maps API and a reservation form"
-    },
-    {
-      "name": "Kingpad",
-      "description": "A fully responsive landing-page I built for Kingworld Finance, collaborating with a team of designers & developers, pixel-perfectly duplicating a Figma design"
-    },
-    {
-      "name": "Attorneyster",
-      "description": "A legal services website's homepage from a frontend challenge I built to practice Next.js and Tailwind CSS"
-    },
-    {
-      "name": "Todayzzz Todos",
-      "description": "A drag & drop todo app to organize your daily tasks I built to practice PostgrSQL, Typescript, SCSS and Jest"
-    },
-    {
-      "name": "Eurafrique",
-      "description": "A fully responsive, multilingual website (French, English, Spanish and Arabic) I developed for the association Eurafrique.eu."
-    },
-    {
-      "name": "Partymates",
-      "description": "A full-stack MERN sort of social media app I created to connect people so they can travel to festivals together. Users can create an account, save or subscribe to events and interact with other users"
-    },
-    {
-      "name": "Pickle Rick vs Rats - The Game",
-      "description": "My first coding project, a cool Javascript shooting game, kill the angry rats!"
-    }
-  ]
+  "waveRiderDescription": "An E-commerce website I built inspired by the island I call home: Fuerteventura. All your watersports gear in one place.",
+  "cmdurandDescription": "A website I designed and built for a French construction company, integrating a contact form.",
+  "farmhouseDescription": "A restaurant website integrating Google Maps API and a reservation form",
+  "kingpadDescription": "A fully responsive landing page I coded for Kingworld Finance, collaborating with a team of designers & developers, pixel-perfectly duplicating a Figma design.",
+  "attorneysterDescription": "A legal services website's homepage from a frontend challenge I built to practice Next.js and Tailwind CSS.",
+  "todayzzzDescription": "A drag & drop todo app to organize your daily tasks I built to practice PostgrSQL, Typescript, SCSS and Jest. It features a dark/light mode.",
+  "pickleRickGameDescription": "My first ever coding project and even though it is basic, for being the first it holds a special place in my heart. A cool Javascript shooting game that you can try on a desktop, kill the angry rats!"
 }

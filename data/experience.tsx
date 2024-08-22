@@ -1,0 +1,78 @@
+import frigateLogo from "@/assets/img/frigate.webp";
+import oslyLogo from "@/assets/img/osly.webp";
+import eurafriqueLogo from "@/assets/img/eurafrique.webp";
+import upworkLogo from "@/assets/img/upwork.webp";
+import qualentumLogo from "@/assets/img/qualentum.webp";
+import ironhackLogo from "@/assets/img/ironhack.webp";
+
+export interface ExperienceProps {
+  title: string;
+  company: string;
+  place: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  logo: any;
+}
+
+export const experiences: ExperienceProps[] = [
+  {
+    title: "Software Developer",
+    company: "Frigate",
+    place: "London, remote",
+    startDate: "Dec 2023",
+    endDate: "Present",
+    description:
+      "Developing web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow, Firebase and PostgreSQL",
+    logo: frigateLogo,
+  },
+  {
+    title: "Frontend Developer - React",
+    company: "Qualentum",
+    place: "Madrid, remote",
+    startDate: "Apr 2024",
+    endDate: "Aug 2024",
+    description:
+      "Bootcamp specializing in core frontend development - React.JS",
+    logo: qualentumLogo,
+  },
+  {
+    title: "React Native Developer",
+    company: "Osly Solutions",
+    place: "Nantes, remote",
+    startDate: "Jul 2023",
+    endDate: "Dec 2023",
+    description:
+      "Developed a mobile app using React Native, Typescript and Supabase",
+    logo: oslyLogo,
+  },
+  {
+    title: "Web Developer",
+    company: "Eurafrique",
+    place: "Strasbourg, remote",
+    startDate: "Apr 2023",
+    endDate: "Nov 2023",
+    description:
+      "Developed a multilingual website using React, Scss and Supabase",
+    logo: eurafriqueLogo,
+  },
+  {
+    title: "Freelance Web Developer",
+    company: "Upwork",
+    place: "Remote",
+    startDate: "Feb 2023",
+    endDate: "Present",
+    description:
+      "Provided freelance web development services using React, NextJS, Typescript, Tailwind and more",
+    logo: upworkLogo,
+  },
+  {
+    title: "Fullstack Developer - MERN",
+    company: "Ironhack",
+    place: "Paris, remote",
+    startDate: "Nov 2022",
+    endDate: "Feb 2023",
+    description: "Bootcamp specializing in fullstack development - MERN",
+    logo: ironhackLogo,
+  },
+];

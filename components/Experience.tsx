@@ -3,92 +3,10 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import TitleUnderline from "./TitleUnderline";
 import ExperienceCard from "./ExperienceCard";
-import frigateLogo from "@/assets/img/frigate.webp";
-import oslyLogo from "@/assets/img/osly.webp";
-import eurafriqueLogo from "@/assets/img/eurafrique.webp";
-import upworkLogo from "@/assets/img/upwork.webp";
-import qualentumLogo from "@/assets/img/qualentum.webp";
-import ironhackLogo from "@/assets/img/ironhack.webp";
-
-interface ExperienceProps {
-  title: any;
-  company: any;
-  place: any;
-  startDate: any;
-  endDate: any;
-  description: any;
-  logo: any;
-}
+import { experiences } from "@/data/experience";
 
 const Experience: React.FC = () => {
   const { t } = useTranslation();
-
-  const experiences: ExperienceProps[] = [
-    {
-      title: t("Software Developer"),
-      company: t("Frigate"),
-      place: t("London, remote"),
-      startDate: t("Dec 2023"),
-      endDate: t("Present"),
-      description: t(
-        "Developing web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow, Firebase and PostgreSQL"
-      ),
-      logo: frigateLogo,
-    },
-    {
-      title: t("Frontend Developer - React"),
-      company: t("Qualentum"),
-      place: t("Madrid, remote"),
-      startDate: t("Apr 2024"),
-      endDate: t("Aug 2024"),
-      description: t(
-        "Bootcamp specializing in core frontend development - React.JS"
-      ),
-      logo: qualentumLogo,
-    },
-    {
-      title: t("React Native Developer"),
-      company: t("Osly Solutions"),
-      place: t("Nantes, remote"),
-      startDate: t("Jul 2023"),
-      endDate: t("Dec 2023"),
-      description: t(
-        "Developed a mobile app using React Native, Typescript and Supabase"
-      ),
-      logo: oslyLogo,
-    },
-    {
-      title: t("Web Developer"),
-      company: t("Eurafrique"),
-      place: t("Strasbourg, remote"),
-      startDate: t("Apr 2023"),
-      endDate: t("Nov 2023"),
-      description: t(
-        "Developed a multilingual website using React, Scss and Supabase"
-      ),
-      logo: eurafriqueLogo,
-    },
-    {
-      title: t("Freelance Web Developer"),
-      company: t("Upwork"),
-      place: t("Remote"),
-      startDate: t("Feb 2023"),
-      endDate: t("Present"),
-      description: t(
-        "Provided freelance web development services using React, NextJS, Typescript, Tailwind and more"
-      ),
-      logo: upworkLogo,
-    },
-    {
-      title: t("Fullstack Developer - MERN"),
-      company: t("Ironhack"),
-      place: t("Paris, remote"),
-      startDate: t("Nov 2022"),
-      endDate: t("Feb 2023"),
-      description: t("Bootcamp specializing in fullstack development - MERN"),
-      logo: ironhackLogo,
-    },
-  ];
 
   return (
     <>
@@ -113,7 +31,7 @@ const Experience: React.FC = () => {
         transition={{
           type: "spring",
           stiffness: 40,
-          delay: 0.5,
+          delay: 0.7,
           ease: "easeOut",
         }}
         viewport={{ once: true }}
@@ -127,12 +45,12 @@ const Experience: React.FC = () => {
         {experiences.map((exp, index) => (
           <ExperienceCard
             key={index}
-            title={exp.title}
-            company={exp.company}
-            place={exp.place}
-            startDate={exp.startDate}
-            endDate={exp.endDate}
-            description={exp.description}
+            title={t(exp.title)}
+            company={t(exp.company)}
+            place={t(exp.place)}
+            startDate={t(exp.startDate)}
+            endDate={t(exp.endDate)}
+            description={t(exp.description)}
             logo={exp.logo}
           />
         ))}

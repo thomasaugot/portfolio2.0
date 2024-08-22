@@ -28,7 +28,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       transition={{
         type: "spring",
         stiffness: 40,
-        delay: 0.5,
+        delay: 0.9,
         ease: "easeOut",
       }}
       viewport={{ once: true }}
