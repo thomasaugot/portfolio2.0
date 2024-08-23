@@ -21,9 +21,9 @@ export const experiences: ExperienceProps[] = [
     company: "Frigate",
     place: "London, remote",
     startDate: "Dec 2023",
-    endDate: "Present",
+    endDate: "Aug 2024",
     description:
-      "Developing web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow, Firebase and PostgreSQL",
+      "Developed web & mobile applications in React, React Native, Tailwind, Vite, Flutterflow, Firebase and PostgreSQL",
     logo: frigateLogo,
   },
   {

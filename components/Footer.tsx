@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#3B82F6" />
-                <stop offset="100%" stopColor="#FF44EC" />
+                <stop offset="0%" stopColor="#6D28D9" />
+                <stop offset="100%" stopColor="#14B8A6" />
               </linearGradient>
             </defs>
             <IoHeart className="w-full h-full" fill="url(#heartGradient)" />
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
         {t("by")}
         <a
           href="https://www.linkedin.com/in/thomas-augot/"
-          className="ml-1 hover:text-primary-text"
+          className="ml-1 hover:text-transparent hover:bg-clip-text hover:bg-gradient"
         >
           {" "}
           Thomas Augot
