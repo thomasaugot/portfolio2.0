@@ -1,9 +1,9 @@
-import frigateLogo from "@/assets/img/frigate.webp";
-import oslyLogo from "@/assets/img/osly.webp";
-import eurafriqueLogo from "@/assets/img/eurafrique.webp";
-import upworkLogo from "@/assets/img/upwork.webp";
-import qualentumLogo from "@/assets/img/qualentum.webp";
-import ironhackLogo from "@/assets/img/ironhack.webp";
+import frigateLogo from "@/public/assets/img/frigate.webp";
+import oslyLogo from "@/public/assets/img/osly.webp";
+import eurafriqueLogo from "@/public/assets/img/eurafrique.webp";
+import upworkLogo from "@/public/assets/img/upwork.webp";
+import qualentumLogo from "@/public/assets/img/qualentum.webp";
+import ironhackLogo from "@/public/assets/img/ironhack.webp";
 
 export interface ExperienceProps {
   title: string;

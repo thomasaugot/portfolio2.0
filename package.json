@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.4",
+    "@react-three/drei": "^9.111.3",
+    "@react-three/fiber": "^8.17.6",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@tsparticles/engine": "^3.5.0",
@@ -20,6 +22,7 @@
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.3.19",
+    "gsap": "^3.12.5",
     "i18next": "^23.14.0",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.0",
@@ -37,7 +40,7 @@
     "swiper": "^11.1.8",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-filters": "^3.0.0",
-    "three": "^0.167.0",
+    "three": "^0.167.1",
     "three-stdlib": "^2.30.5",
     "use-debounce": "^10.0.2"
   },

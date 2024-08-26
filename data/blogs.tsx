@@ -1,19 +1,19 @@
-import article1 from "@/assets/img/blog-articles/article-1.webp";
-import article2 from "@/assets/img/blog-articles/article-2.webp";
-import article3 from "@/assets/img/blog-articles/article-3.webp";
-import article4 from "@/assets/img/blog-articles/article-4.webp";
-import article5 from "@/assets/img/blog-articles/article-5.webp";
-import article6 from "@/assets/img/blog-articles/article-6.webp";
-import article7 from "@/assets/img/blog-articles/article-7.webp";
-import article8 from "@/assets/img/blog-articles/article-8.webp";
-import article9 from "@/assets/img/blog-articles/article-9.webp";
-import article10 from "@/assets/img/blog-articles/article-10.webp";
-import article11 from "@/assets/img/blog-articles/article-11.webp";
-import article12 from "@/assets/img/blog-articles/article-12.webp";
-import article13 from "@/assets/img/blog-articles/article-13.webp";
-import article14 from "@/assets/img/blog-articles/article-14.webp";
-import article15 from "@/assets/img/blog-articles/article-15.webp";
-import article16 from "@/assets/img/blog-articles/article-16.webp";
+import article1 from "@/public/public/assets/img/blog-articles/article-1.webp";
+import article2 from "@/public/assets/img/blog-articles/article-2.webp";
+import article3 from "@/public/assets/img/blog-articles/article-3.webp";
+import article4 from "@/public/assets/img/blog-articles/article-4.webp";
+import article5 from "@/public/assets/img/blog-articles/article-5.webp";
+import article6 from "@/public/assets/img/blog-articles/article-6.webp";
+import article7 from "@/public/assets/img/blog-articles/article-7.webp";
+import article8 from "@/public/assets/img/blog-articles/article-8.webp";
+import article9 from "@/public/assets/img/blog-articles/article-9.webp";
+import article10 from "@/public/assets/img/blog-articles/article-10.webp";
+import article11 from "@/public/assets/img/blog-articles/article-11.webp";
+import article12 from "@/public/assets/img/blog-articles/article-12.webp";
+import article13 from "@/public/assets/img/blog-articles/article-13.webp";
+import article14 from "@/public/assets/img/blog-articles/article-14.webp";
+import article15 from "@/public/assets/img/blog-articles/article-15.webp";
+import article16 from "@/public/assets/img/blog-articles/article-16.webp";
 
 export const blogs = [
   {

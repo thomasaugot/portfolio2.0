@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import englishFlag from "@/assets/img/en.webp";
-import frenchFlag from "@/assets/img/fr.webp";
-import spanishFlag from "@/assets/img/es.webp";
+import englishFlag from "@/public/assets/img/en.webp";
+import frenchFlag from "@/public/assets/img/fr.webp";
+import spanishFlag from "@/public/assets/img/es.webp";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
