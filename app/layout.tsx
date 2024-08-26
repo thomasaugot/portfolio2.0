@@ -6,7 +6,6 @@ import ClientSideWrapper from "@/components/ClientSideWrapper";
 import Navbar from "@/components/Navbar";
 import { orbitron, roboto } from "./fonts";
 import ShootingStars from "@/components/ShootingStars";
-import StarsBackground from "@/components/StarsBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,7 +47,6 @@ export default function RootLayout({
         <ClientSideWrapper>
           <div className="relative min-h-screen flex flex-col">
             <ShootingStars />
-            <StarsBackground />
             <Navbar />
             <main className="flex-1">{children}</main>
           </div>

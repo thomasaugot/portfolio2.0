@@ -9,6 +9,7 @@ import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
 import dynamic from "next/dynamic";
 import { useDebounce } from "use-debounce";
+import StarsBackground from "@/components/StarsBackground";
 
 const Skills = dynamic(() => import("@/components/Skills"));
 const Experience = dynamic(() => import("@/components/Experience"));
@@ -36,6 +37,7 @@ const About: React.FC = () => {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-8 my-24">
+        <StarsBackground />
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}

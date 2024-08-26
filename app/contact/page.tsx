@@ -10,6 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import TitleUnderline from "@/components/TitleUnderline";
 import { useTranslation } from "react-i18next";
+import StarsBackground from "@/components/StarsBackground";
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -17,6 +18,7 @@ const Contact: React.FC = () => {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-8 my-20">
+        <StarsBackground />
         <div className="w-full max-w-xl text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}

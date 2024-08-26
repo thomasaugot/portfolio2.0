@@ -8,6 +8,7 @@ import TitleUnderline from "@/components/TitleUnderline";
 import GradientButton from "@/components/GradientButton";
 import BlogArticleCard from "@/components/BlogArticleCard";
 import { blogs } from "@/data/blogs";
+import StarsBackground from "@/components/StarsBackground";
 
 const Blog: React.FC = () => {
   const [visibleBlogs, setVisibleBlogs] = useState(4);
@@ -20,6 +21,7 @@ const Blog: React.FC = () => {
   return (
     <>
       <main className="flex min-h-screen flex-col p-8 my-20">
+        <StarsBackground />
         <div className="w-full text-center mt-8 mb-16">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}

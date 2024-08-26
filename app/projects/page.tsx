@@ -8,6 +8,7 @@ import TitleUnderline from "@/components/TitleUnderline";
 import ProjectCard from "@/components/ProjectCard";
 import GradientButton from "@/components/GradientButton";
 import { projects } from "@/data/projects";
+import StarsBackground from "@/components/StarsBackground";
 
 const Projects: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -33,6 +34,7 @@ const Projects: React.FC = () => {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-8 my-24">
+        <StarsBackground />
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
