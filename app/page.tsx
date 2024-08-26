@@ -33,7 +33,7 @@ const Home: React.FC = () => {
   }, [i18n.language]);
 
   return (
-    <main className="relative flex h-dvh flex-col items-center justify-center text-white">
+    <main className="relative flex h-dvh flex-col items-center justify-center text-white overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
         <Canvas
           className="w-full h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh] cursor-grab"
