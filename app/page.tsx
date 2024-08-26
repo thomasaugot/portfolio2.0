@@ -32,10 +32,10 @@ const Home: React.FC = () => {
   }, [i18n.language]);
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center text-white">
+    <main className="relative flex h-dvh flex-col items-center justify-center text-white">
       <div className="absolute top-0 left-0 w-full h-full">
         <Canvas
-          className="w-full h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh]"
+          className="w-full h-[70vh] sm:h-[80vh] md:h-[90vh] lg:h-[100vh] cursor-grab"
           camera={{ position: [0, 0, 10], fov: 60 }}
         >
           <ambientLight intensity={0.5} />

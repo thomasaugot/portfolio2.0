@@ -42,7 +42,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
   }, [currentLine]);
 
   return (
-    <div className="relative flex flex-col items-center text-center ">
+    <div className="relative flex flex-col items-center text-center w-auto">
       {lines.map((line, index) => (
         <div
           key={index}
@@ -55,7 +55,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
         >
           {typedText[index]}
           {index === currentLine && (
-            <span className="absolute right-0 bottom-0 w-1 h-12 bg-white animate-blink ml-2" />
+            <span className="absolute right-0 bottom-0 w-1 h-12 bg-white animate-blink ml-2 hidden md:block" />
           )}
         </div>
       ))}
