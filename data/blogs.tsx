@@ -1,4 +1,4 @@
-import article1 from "@/public/public/assets/img/blog-articles/article-1.webp";
+import article1 from "@/public/assets/img/blog-articles/article-1.webp";
 import article2 from "@/public/assets/img/blog-articles/article-2.webp";
 import article3 from "@/public/assets/img/blog-articles/article-3.webp";
 import article4 from "@/public/assets/img/blog-articles/article-4.webp";

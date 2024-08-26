@@ -1,15 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import GradientButton from "@/components/GradientButton";
 import TypewriterEffect from "@/components/TypewriterEffect";
 import { useTranslation } from "react-i18next";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import Moon from "@/components/Moon";
+import Moon from "@/components/3DElements/Moon";
+import Earth from "@/components/3DElements/Earth";
 
-const Home = () => {
+const Home: React.FC = () => {
   const [showButton, setShowButton] = useState(false);
   const { t, i18n } = useTranslation();
 
@@ -48,6 +49,7 @@ const Home = () => {
             fade
           />
           <Moon />
+          <Earth />
           <OrbitControls enableZoom={false} />
         </Canvas>
       </div>

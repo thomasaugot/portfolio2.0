@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import profileImage from "@/assets/img/profile.webp";
+import profileImage from "@/public/assets/img/profile.webp";
 import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
 import dynamic from "next/dynamic";
