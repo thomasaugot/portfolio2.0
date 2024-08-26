@@ -36,6 +36,8 @@ const config: Config = {
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        tapperoo: "tapperoo 3s infinite",
+        handMove: "handMove 3s infinite",
       },
       keyframes: {
         blink: {
@@ -65,6 +67,23 @@ const config: Config = {
             transform:
               "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
           },
+        },
+        tapperoo: {
+          "0%": { height: "25%", width: "25%" },
+          "50%": {
+            height: "5%",
+            width: "35%",
+            opacity: "0",
+            transform: "translate(-250%)",
+          },
+          "100%": { opacity: "0" },
+        },
+        handMove: {
+          "0%": { transform: "rotate(30deg)" },
+          "50%": {
+            transform: "translate(-60%, -10%) rotate(-30deg) scale(0.9)",
+          },
+          "100%": { transform: "rotate(30deg)" },
         },
       },
     },

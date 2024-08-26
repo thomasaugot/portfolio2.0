@@ -9,6 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import Moon from "@/components/3DElements/Moon";
 import Earth from "@/components/3DElements/Earth";
+import TapGesture from "@/components/TapGesture";
 
 const Home: React.FC = () => {
   const [showButton, setShowButton] = useState(false);
@@ -70,6 +71,7 @@ const Home: React.FC = () => {
           )}
         </div>
       </div>
+      <TapGesture />
     </main>
   );
 };
