@@ -65,7 +65,7 @@ const About: React.FC = () => {
               transition={{
                 type: "spring",
                 stiffness: 40,
-                delay: 0.9,
+                delay: 0.7,
                 ease: "easeOut",
               }}
               className="text-white px-4 lg:px-0"

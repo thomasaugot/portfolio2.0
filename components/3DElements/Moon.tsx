@@ -12,7 +12,7 @@ const Moon = () => {
   // Rotate the moon continuously
   useFrame(() => {
     if (moonRef.current) {
-      moonRef.current.rotation.y += 0.005;
+      moonRef.current.rotation.y += 0.003;
     }
   });
 

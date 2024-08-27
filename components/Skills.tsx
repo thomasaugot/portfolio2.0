@@ -34,13 +34,13 @@ const Skills: React.FC = () => {
       <motion.div
         whileInView={{ y: 0, opacity: 1 }}
         initial={{ y: 100, opacity: 0 }}
+        viewport={{ once: true }}
         transition={{
           type: "spring",
           stiffness: 40,
           delay: 0.5,
           ease: "easeOut",
         }}
-        viewport={{ once: true }}
         className="text-center text-4xl font-bold mb-8 font-orbitron text-white px-4 my-20"
       >
         <h1 className="my-4">{t("Always expanding my horizons")}</h1>
@@ -48,14 +48,14 @@ const Skills: React.FC = () => {
       </motion.div>
       <div className="flex flex-col items-center gap-8 max-w-[80vw]">
         <motion.div
-          whileInView={{ scale: 1, opacity: 1 }}
-          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ y: 100, opacity: 0 }}
           viewport={{ once: true }}
           transition={{
             type: "tween",
-            stiffness: 50,
-            delay: 0.4,
-            ease: "linear",
+            stiffness: 40,
+            delay: 0.7,
+            ease: "easeOut",
           }}
           className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 transition-all duration-1000 text-white md:mr-auto"
         >
@@ -74,14 +74,14 @@ const Skills: React.FC = () => {
           </Marquee>
         </motion.div>
         <motion.div
-          whileInView={{ scale: 1, opacity: 1 }}
-          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ y: 100, opacity: 0 }}
           viewport={{ once: true }}
           transition={{
             type: "tween",
-            stiffness: 50,
-            delay: 0.4,
-            ease: "linear",
+            stiffness: 40,
+            delay: 0.7,
+            ease: "easeOut",
           }}
           className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 transition-all duration-1000 text-white md:ml-auto"
         >
@@ -105,14 +105,14 @@ const Skills: React.FC = () => {
           </Marquee>
         </motion.div>
         <motion.div
-          whileInView={{ scale: 1, opacity: 1 }}
-          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          initial={{ y: 100, opacity: 0 }}
           viewport={{ once: true }}
           transition={{
             type: "tween",
-            stiffness: 50,
-            delay: 0.4,
-            ease: "linear",
+            stiffness: 40,
+            delay: 0.7,
+            ease: "easeOut",
           }}
           className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 transition-all duration-1000 text-white md:mr-auto"
         >
