@@ -18,13 +18,16 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
   }, [i18n.language]);
 
   useEffect(() => {
+    let isCancelled = false;
+
     const typeLine = async (index: number) => {
-      if (index >= lines.length) return;
+      if (index >= lines.length || isCancelled) return;
 
       const text = lines[index];
       let currentText = "";
 
       for (let i = 0; i <= text.length; i++) {
+        if (isCancelled) return;
         currentText = text.slice(0, i);
         setTypedText((prev) => {
           const newText = [...prev];
@@ -35,11 +38,17 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
       }
 
       await new Promise((resolve) => setTimeout(resolve, 600));
-      setCurrentLine(index + 1);
+      if (!isCancelled) {
+        setCurrentLine(index + 1);
+      }
     };
 
     typeLine(currentLine);
-  }, [currentLine]);
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [currentLine, lines]);
 
   return (
     <div className="relative flex flex-col items-center text-center w-auto">
