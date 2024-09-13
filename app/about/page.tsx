@@ -10,10 +10,15 @@ import TitleUnderline from "@/components/TitleUnderline";
 import dynamic from "next/dynamic";
 import { useDebounce } from "use-debounce";
 import StarsBackground from "@/components/StarsBackground";
+import { debounce } from "lodash";
 
-const Skills = dynamic(() => import("@/components/Skills"));
-const Experience = dynamic(() => import("@/components/Experience"));
-const GradientButton = dynamic(() => import("@/components/GradientButton"));
+const Skills = dynamic(() => import("@/components/Skills"), { ssr: false });
+const Experience = dynamic(() => import("@/components/Experience"), {
+  ssr: false,
+});
+const GradientButton = dynamic(() => import("@/components/GradientButton"), {
+  ssr: false,
+});
 
 const About: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -21,12 +26,15 @@ const About: React.FC = () => {
   const [x, setX] = useState(0);
   const [debounceX] = useDebounce(x, 150);
 
-  const handleResize = useCallback(() => {
-    setIsDesktop(window.innerWidth >= 992);
-  }, []);
+  const handleResize = useCallback(
+    debounce(() => {
+      setIsDesktop(window.innerWidth >= 992);
+    }, 200),
+    []
+  );
 
   useEffect(() => {
-    handleResize();
+    handleResize(); // Initial call on mount
 
     window.addEventListener("resize", handleResize);
     return () => {
@@ -38,6 +46,7 @@ const About: React.FC = () => {
     <>
       <main className="flex min-h-screen flex-col items-center justify-between p-8 my-24">
         <StarsBackground />
+
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
@@ -56,6 +65,7 @@ const About: React.FC = () => {
             </h1>
             <TitleUnderline />
           </motion.div>
+
           <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between lg:mt-10 w-full">
             <motion.div
               whileInView={{ y: 0, opacity: 1 }}
@@ -88,14 +98,11 @@ const About: React.FC = () => {
             </motion.div>
             <motion.div
               whileInView={{ x: 0, opacity: 1, rotate: 0 }}
-              initial={{ x: "100%", opacity: 0, rotate: 180 }}
               viewport={{ once: true }}
-              transition={{
-                type: "spring",
-                stiffness: 20,
-                delay: 1.0,
-                ease: "easeOut",
-              }}
+              style={{ transformStyle: "preserve-3d" }}
+              initial={{ rotateY: 180 }}
+              animate={{ rotateY: 0 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
               className="mb-6 lg:mb-0"
             >
               <Image
@@ -108,8 +115,10 @@ const About: React.FC = () => {
             </motion.div>
           </div>
         </div>
+
         <Skills />
         <Experience />
+
         <div className="min-h-[100px] flex items-center justify-center mt-12">
           <motion.div
             initial={{ opacity: 0 }}
@@ -122,6 +131,7 @@ const About: React.FC = () => {
           </motion.div>
         </div>
       </main>
+
       <Footer />
     </>
   );
