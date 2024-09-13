@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 interface TypewriterEffectProps {
@@ -11,13 +11,23 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
     new Array(lines.length).fill("")
   );
   const [currentLine, setCurrentLine] = useState(0);
+  const isFirstRender = useRef(true);
 
+  // Effect to reset text when the language changes
   useEffect(() => {
-    setTypedText(new Array(lines.length).fill(""));
-    setCurrentLine(0);
+    if (!isFirstRender.current) {
+      setTypedText(new Array(lines.length).fill(""));
+      setCurrentLine(0);
+    }
   }, [i18n.language]);
 
+  // Typing effect for each line
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false; // Prevent the effect from running on the first render
+      return;
+    }
+
     let isCancelled = false;
 
     const typeLine = async (index: number) => {
@@ -26,6 +36,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
       const text = lines[index];
       let currentText = "";
 
+      // Type out each character of the current line
       for (let i = 0; i <= text.length; i++) {
         if (isCancelled) return;
         currentText = text.slice(0, i);
@@ -34,11 +45,13 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
           newText[index] = currentText;
           return newText;
         });
-        await new Promise((resolve) => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 100)); // Typing speed
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 600));
-      if (!isCancelled) {
+      await new Promise((resolve) => setTimeout(resolve, 600)); // Pause after typing
+
+      // Move to the next line if available
+      if (!isCancelled && index < lines.length - 1) {
         setCurrentLine(index + 1);
       }
     };
@@ -48,7 +61,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({ lines }) => {
     return () => {
       isCancelled = true;
     };
-  }, [currentLine, lines]);
+  }, [currentLine]);
 
   return (
     <div className="relative flex flex-col items-center text-center w-auto">
