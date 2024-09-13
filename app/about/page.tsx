@@ -75,7 +75,7 @@ const About: React.FC = () => {
               transition={{
                 type: "spring",
                 stiffness: 40,
-                delay: 0.7,
+                delay: 0.6,
                 ease: "easeOut",
               }}
               className="text-white px-4 lg:px-0"
@@ -115,10 +115,14 @@ const About: React.FC = () => {
             </motion.div>
           </div>
         </div>
-
+        <br />
+        <br />
         <Skills />
+        <br />
+        <br />
         <Experience />
-
+        <br />
+        <br />
         <div className="min-h-[100px] flex items-center justify-center mt-12">
           <motion.div
             initial={{ opacity: 0 }}

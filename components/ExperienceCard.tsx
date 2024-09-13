@@ -10,6 +10,7 @@ interface ExperienceCardProps {
   endDate: string;
   description: string;
   logo: string;
+  delay: number;
 }
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
@@ -20,6 +21,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   endDate,
   description,
   logo,
+  delay,
 }) => {
   return (
     <motion.div
@@ -28,7 +30,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       transition={{
         type: "spring",
         stiffness: 40,
-        delay: 0.5,
+        delay: delay,
         ease: "easeOut",
       }}
       viewport={{ once: true }}

@@ -52,6 +52,7 @@ const Experience: React.FC = () => {
             endDate={t(exp.endDate)}
             description={t(exp.description)}
             logo={exp.logo}
+            delay={index * 0.2}
           />
         ))}
       </ol>

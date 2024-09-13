@@ -32,9 +32,15 @@ const Skills: React.FC = () => {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        initial={{ y: -100, opacity: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          type: "spring",
+          stiffness: 40,
+          delay: 0.5,
+          ease: "easeOut",
+        }}
         className="text-center text-4xl font-bold mb-8 font-orbitron text-white px-4 my-20"
       >
         <h1 className="my-4">{t("Always expanding my horizons")}</h1>

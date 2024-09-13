@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       transition={{
         type: "spring",
         stiffness: 40,
-        delay: 0.9,
+        delay: 0.7,
         ease: "easeOut",
       }}
       className="w-full border-b-2 border-gray-200 p-6 flex flex-col gap-3 md:flex-row items-center md:items-start relative"
