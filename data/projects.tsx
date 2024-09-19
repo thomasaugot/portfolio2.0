@@ -46,6 +46,11 @@ import todayzzz1 from "@/public/assets/img/todayzztodos/tt-1.webp";
 import todayzzz2 from "@/public/assets/img/todayzztodos/tt-2.webp";
 import todayzzz3 from "@/public/assets/img/todayzztodos/tt-3.webp";
 import todayzzz4 from "@/public/assets/img/todayzztodos/tt-4.webp";
+import todayzzz5 from "@/public/assets/img/todayzztodos/tt-5.webp";
+import todayzzz6 from "@/public/assets/img/todayzztodos/tt-6.webp";
+import todayzzz7 from "@/public/assets/img/todayzztodos/tt-7.webp";
+import todayzzz8 from "@/public/assets/img/todayzztodos/tt-8.webp";
+import todayzzz9 from "@/public/assets/img/todayzztodos/tt-9.webp";
 import pickleRickGame1 from "@/public/assets/img/rick&morty-game/pr-1.webp";
 import pickleRickGame2 from "@/public/assets/img/rick&morty-game/pr-2.webp";
 import pickleRickGame3 from "@/public/assets/img/rick&morty-game/pr-3.webp";
@@ -88,6 +93,31 @@ export const projects = [
     images: [cmd1, cmd2, cmd3, cmd4, cmd5, cmd6, cmd7, cmd8, cmd9, cmd10],
     githubLink: "https://github.com/thomasaugot/charpente-menuiserie-durand",
     liveLink: "https://www.cmdurand.fr/",
+  },
+  {
+    title: "Todayzzz Todos",
+    descriptionKey: "todayzzzDescription",
+    techStack: [
+      "React.JS",
+      "SCSS",
+      "Typescript",
+      "Jest",
+      "PostgreSQL",
+      "Context API",
+    ],
+    images: [
+      todayzzz1,
+      todayzzz2,
+      todayzzz3,
+      todayzzz4,
+      todayzzz5,
+      todayzzz6,
+      todayzzz7,
+      todayzzz8,
+      todayzzz9,
+    ],
+    githubLink: "https://github.com/thomasaugot/todayzzz-todo-app-frontend",
+    liveLink: "https://todayzzz-todos.netlify.app/",
   },
   {
     title: "Farmhouse Table",
@@ -149,21 +179,6 @@ export const projects = [
     ],
     githubLink: "https://github.com/thomasaugot/attorneyster-nextjs",
     liveLink: "https://attorneyster-ta.vercel.app/",
-  },
-  {
-    title: "Todayzzz Todos",
-    descriptionKey: "todayzzzDescription",
-    techStack: [
-      "React.JS",
-      "SCSS",
-      "Typescript",
-      "Jest",
-      "PostgreSQL",
-      "Context API",
-    ],
-    images: [todayzzz1, todayzzz2, todayzzz3, todayzzz4],
-    githubLink: "https://github.com/thomasaugot/kp-next.js",
-    liveLink: "https://kp-next-js.vercel.app/",
   },
   {
     title: "Pickle Rick vs Rats - The Game",

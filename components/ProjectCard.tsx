@@ -62,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       </div>
       <div className="w-full md:w-1/2 h-full z-0">
-        <InfiniteMovingImg items={images.reverse() as { src: string }[]} />
+        <InfiniteMovingImg items={images as { src: string }[]} />
       </div>
     </motion.div>
   );
