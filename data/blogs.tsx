@@ -14,8 +14,19 @@ import article13 from "@/public/assets/img/blog-articles/article-13.webp";
 import article14 from "@/public/assets/img/blog-articles/article-14.webp";
 import article15 from "@/public/assets/img/blog-articles/article-15.webp";
 import article16 from "@/public/assets/img/blog-articles/article-16.webp";
+import article17 from "@/public/assets/img/blog-articles/article-17.webp";
 
 export const blogs = [
+  {
+    title:
+      "Fetch or Axios: What is the Difference and When Should You Use Each?",
+    content:
+      "As a developer, you are probably familiar with the need to interact with APIs or fetch data from servers. Two popular ways to handle HTTP...",
+    image: article17,
+    mediumLink:
+      "https://medium.com/@thomasaugot/fetch-or-axios-what-is-the-difference-and-when-should-you-use-each-eb175a902ec1",
+    date: "Sept. 20, 2024",
+  },
   {
     title: "How to Start Scroll at Bottom in React",
     content:
