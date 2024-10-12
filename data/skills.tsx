@@ -102,6 +102,16 @@ export const backendSkills = [
     alt: "Supabase",
     title: "Supabase",
   },
+  {
+    src: "https://raw.githubusercontent.com/thomasaugot/thomasaugot/refs/heads/main/php-logo.webp?raw=true",
+    alt: "PHP",
+    title: "PHP",
+  },
+  {
+    src: "https://raw.githubusercontent.com/thomasaugot/thomasaugot/refs/heads/main/aws-logo.webp?raw=true",
+    alt: "AWS",
+    title: "AWS",
+  },
 ];
 
 export const mobileSkills = [

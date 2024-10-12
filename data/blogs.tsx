@@ -15,8 +15,18 @@ import article14 from "@/public/assets/img/blog-articles/article-14.webp";
 import article15 from "@/public/assets/img/blog-articles/article-15.webp";
 import article16 from "@/public/assets/img/blog-articles/article-16.webp";
 import article17 from "@/public/assets/img/blog-articles/article-17.webp";
+import article18 from "@/public/assets/img/blog-articles/article-18.webp";
 
 export const blogs = [
+  {
+    title: "AWS for Beginners: Exploring Cloud Services",
+    content:
+      "So, I recently dove into AWS for a project at work, and I thought I’d share what I learned as a junior dev trying to figure out this cloud stuff. We...",
+    image: article18,
+    mediumLink:
+      "https://medium.com/@thomasaugot/aws-for-beginners-exploring-cloud-services-b488442c5d93",
+    date: "Oct. 10, 2024",
+  },
   {
     title:
       "Fetch or Axios: What is the Difference and When Should You Use Each?",

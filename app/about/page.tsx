@@ -82,7 +82,7 @@ const About: React.FC = () => {
             >
               <p className="text-base mb-4 font-roboto w-full md:w-[60vw]">
                 {t(
-                  "Hi there! I am Thomas, a passionate developer hailing from Nantes, France. As an ex-globetrotter, I bring a global perspective and an insatiable appetite for challenges to the world of web and mobile development."
+                  "Hi there! I am Thomas, a passionate developer hailing from Nantes, France and currently based in Las Palmas de Gran Canaria. As an ex-globetrotter, I bring a global perspective and an insatiable appetite for challenges to the world of web and mobile development."
                 )}
                 <br />
                 <br />

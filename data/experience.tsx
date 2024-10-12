@@ -4,6 +4,7 @@ import eurafriqueLogo from "@/public/assets/img/eurafrique.webp";
 import upworkLogo from "@/public/assets/img/upwork.webp";
 import qualentumLogo from "@/public/assets/img/qualentum.webp";
 import ironhackLogo from "@/public/assets/img/ironhack.webp";
+import dosxdosLogo from "@/public/assets/img/dosxdos-logo.webp";
 
 export interface ExperienceProps {
   title: string;
@@ -16,6 +17,16 @@ export interface ExperienceProps {
 }
 
 export const experiences: ExperienceProps[] = [
+  {
+    title: "Full Stack Developer",
+    company: "Dos x Dos Grupo Imagen",
+    place: "Telde, Spain, on-site",
+    startDate: "Sept. 2024",
+    endDate: "Now",
+    description:
+      "Developed progressive web applications in React, Next.JS, Tailwind, MySQL, PHP and AWS cloud services",
+    logo: dosxdosLogo,
+  },
   {
     title: "Software Developer",
     company: "Frigate",

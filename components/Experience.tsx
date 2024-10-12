@@ -38,7 +38,7 @@ const Experience: React.FC = () => {
         className="text-lg font-sm mb-16 font-roboto text-white px-auto text-center px-4"
       >
         {t(
-          "With nearly two years of experience, I’ve had the opportunity to contribute to and complete over 15 projects of varying sizes. These projects range from personal endeavors to startup initiatives. Through these experiences, I have developed the ability to work effectively both independently and as part of a team."
+          "With about two years of experience, I’ve had the opportunity to contribute to and complete over 15 projects of varying sizes. These projects range from personal endeavors to corporate initiatives. Through these experiences, I have developed the ability to work effectively both independently and as part of a team."
         )}
       </motion.p>
       <ol className="relative border-s border-gray-200 dark:border-gray-700">
