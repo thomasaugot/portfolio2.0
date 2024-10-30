@@ -25,7 +25,7 @@ const Blog: React.FC = () => {
         <div className="w-full text-center mt-8 md:mb-16">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 50, opacity: 0 }}
             viewport={{ once: true }}
             transition={{
               type: "spring",
@@ -40,7 +40,7 @@ const Blog: React.FC = () => {
           </motion.div>
           <motion.p
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 50, opacity: 0 }}
             viewport={{ once: true }}
             transition={{
               type: "spring",

@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: 50, opacity: 0 }}
       viewport={{ once: true }}
       transition={{
         type: "spring",

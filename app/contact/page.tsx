@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
         <div className="w-full max-w-xl text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 50, opacity: 0 }}
             transition={{
               type: "spring",
               stiffness: 40,
@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
           </motion.div>
           <motion.div
             whileInView={{ x: 0, opacity: 1 }}
-            initial={{ x: "-100%", opacity: 0 }}
+            initial={{ x: "-50%", opacity: 0 }}
             transition={{
               type: "spring",
               stiffness: 40,
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
           </motion.div>
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 50, opacity: 0 }}
             viewport={{ once: true }}
             transition={{
               type: "spring",
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
           <div className="flex justify-center space-x-8">
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
-              initial={{ x: "110%", opacity: 0 }}
+              initial={{ x: "50%", opacity: 0 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
             </motion.div>
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
-              initial={{ x: "110%", opacity: 0 }}
+              initial={{ x: "50%", opacity: 0 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
             </motion.div>
             <motion.div
               whileInView={{ x: 0, opacity: 1 }}
-              initial={{ x: "110%", opacity: 0 }}
+              initial={{ x: "50%", opacity: 0 }}
               viewport={{ once: true }}
               transition={{
                 type: "spring",
