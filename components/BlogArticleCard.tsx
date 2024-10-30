@@ -32,7 +32,7 @@ const BlogArticleCard: React.FC<BlogArticleCardProps> = ({
         delay: 0.8,
         ease: "easeOut",
       }}
-      className="flex flex-col gap-4 md:flex-row border-b-2 border-gray-200 p-6 h-full"
+      className="flex flex-col gap-4 md:flex-row border-b-2 border-gray-200 py-6 h-full"
     >
       <div className="relative w-full md:w-1/3 h-48">
         <Image

@@ -50,7 +50,7 @@ const About: React.FC = () => {
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 30, opacity: 0 }}
             viewport={{ once: true }}
             transition={{
               type: "spring",
@@ -66,19 +66,19 @@ const About: React.FC = () => {
             <TitleUnderline />
           </motion.div>
 
-          <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between lg:mt-10 w-full">
+          <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between mt-16 lg:mt-10 w-full">
             <motion.div
               whileInView={{ y: 0, opacity: 1 }}
-              initial={{ y: 100, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               viewport={{ once: true }}
               animate={{ x: debounceX }}
               transition={{
                 type: "spring",
                 stiffness: 40,
-                delay: 0.6,
+                delay: 0.7,
                 ease: "easeOut",
               }}
-              className="text-white px-4 lg:px-0"
+              className="text-white"
             >
               <p className="text-base mb-4 font-roboto w-full md:w-[60vw]">
                 {t(
@@ -97,18 +97,21 @@ const About: React.FC = () => {
               </p>
             </motion.div>
             <motion.div
-              whileInView={{ x: 0, opacity: 1, rotate: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ x: 50, opacity: 0 }}
               viewport={{ once: true }}
-              style={{ transformStyle: "preserve-3d" }}
-              initial={{ rotateY: 180 }}
-              animate={{ rotateY: 0 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="mb-6 lg:mb-0"
+              animate={{ x: debounceX }}
+              transition={{
+                type: "spring",
+                stiffness: 40,
+                delay: 0.9,
+                ease: "easeOut",
+              }}
             >
               <Image
                 src={profileImage}
                 alt="profile"
-                className="rounded-full border-2 border-white shadow-lg object-cover mx-auto w-full md:w-[30vw]"
+                className="rounded-full bg-white border-2 border-white shadow-lg object-cover mx-auto w-full md:w-[30vw]"
                 placeholder="blur"
                 priority
               />

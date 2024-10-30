@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import TitleUnderline from "./TitleUnderline";
-import { FaHome } from "react-icons/fa";
+import { IoEarthOutline } from "react-icons/io5";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import ShootingStars from "./ShootingStars";
 import StarsBackground from "./StarsBackground";
+import { MdOutlineRocketLaunch } from "react-icons/md";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,8 +111,12 @@ const Navbar: React.FC = () => {
                   setIsOpen(false);
                   setActiveLink("/");
                 }}
+                className="relative text-white mb-4"
               >
-                <FaHome className="text-white text-5xl mb-2 cursor-pointer hover:text-gray-300" />
+                <Link href="/" onClick={() => setActiveLink("/")}>
+                  <IoEarthOutline className="text-5xl" />
+                  <MdOutlineRocketLaunch className="absolute text-2xl -bottom-3 right-10" />
+                </Link>
               </Link>
             )}
             {navItems.map((item) => (
@@ -145,9 +150,10 @@ const Navbar: React.FC = () => {
           <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[14vh] bg-clip-padding backdrop-blur-sm px-10"></div>
           <div className="hidden lg:flex justify-evenly ml-auto gap-8 mr-4">
             {showHomeButton && (
-              <div className="hidden lg:flex items-center mr-8 z-10">
+              <div className="hidden lg:flex items-center z-10 relative text-white cursor-pointer hover:text-gray-300">
                 <Link href="/" onClick={() => setActiveLink("/")}>
-                  <FaHome className="text-white text-2xl cursor-pointer hover:text-gray-300" />
+                  <IoEarthOutline className="text-3xl" />
+                  <MdOutlineRocketLaunch className="absolute text-lg -bottom-1 right-[29px]" />
                 </Link>
               </div>
             )}

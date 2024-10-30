@@ -36,8 +36,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       }}
       className="w-full border-b-2 border-gray-200 p-6 flex flex-col gap-3 md:flex-row items-center md:items-start relative"
     >
-      <div className="w-full md:w-1/2 text-center md:text-left z-10 my-auto">
-        <h1 className="text-white text-2xl font-orbitron mb-4">{title}</h1>
+      <div className="w-full md:w-1/2 text-left z-10 my-auto">
+        <h1 className="text-white text-2xl font-orbitron my-4">{title}</h1>
         <p className="text-gray-400 font-roboto mb-4">{description}</p>
         <p className="text-gray-500 font-roboto mb-4">
           Tech Stack: {techStack.join(", ")}

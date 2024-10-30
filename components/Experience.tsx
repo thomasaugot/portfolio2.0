@@ -12,11 +12,11 @@ const Experience: React.FC = () => {
     <>
       <motion.div
         whileInView={{ y: 0, opacity: 1 }}
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ y: 30, opacity: 0 }}
         transition={{
           type: "spring",
           stiffness: 40,
-          delay: 0.5,
+          delay: 0.3,
           ease: "easeOut",
         }}
         viewport={{ once: true }}
@@ -27,11 +27,11 @@ const Experience: React.FC = () => {
       </motion.div>
       <motion.p
         whileInView={{ y: 0, opacity: 1 }}
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ y: 30, opacity: 0 }}
         transition={{
           type: "spring",
           stiffness: 40,
-          delay: 0.7,
+          delay: 0.5,
           ease: "easeOut",
         }}
         viewport={{ once: true }}
@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
             endDate={t(exp.endDate)}
             description={t(exp.description)}
             logo={exp.logo}
-            delay={index * 0.2}
+            delay={0.5 + index * 0.2}
           />
         ))}
       </ol>

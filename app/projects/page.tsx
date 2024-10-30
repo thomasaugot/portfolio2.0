@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-8 my-24">
+      <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 my-24">
         <StarsBackground />
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
               delay: 0.5,
               ease: "easeOut",
             }}
-            className="text-4xl font-bold mb-6 font-orbitron text-white"
+            className="text-4xl font-bold my-6 font-orbitron text-white"
           >
             <h1 className="my-4">{t("Check out my work")}</h1>
             <TitleUnderline />
@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="text-lg font-sm mb-16 font-roboto text-white px-auto text-center px-4"
+            className="text-lg font-sm mb-16 font-roboto text-white px-auto text-center"
           >
             {t(
               "A selection of my finest personal work, each project a testament to my passion and skills as a developer. These are the creations where I had complete creative control and ownership, reflecting my unique vision and expertise. From concept to completion, these projects are truly mine, accurately representing my experience, creativity, and technical proficiency."

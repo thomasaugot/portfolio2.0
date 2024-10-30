@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
     <>
       <main className="flex min-h-screen flex-col p-8 my-20">
         <StarsBackground />
-        <div className="w-full text-center mt-8 mb-16">
+        <div className="w-full text-center mt-8 md:mb-16">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
             initial={{ y: 100, opacity: 0 }}
@@ -33,7 +33,7 @@ const Blog: React.FC = () => {
               delay: 0.5,
               ease: "easeOut",
             }}
-            className="text-4xl font-bold mb-6 font-orbitron text-white"
+            className="text-4xl font-bold mb-8 font-orbitron text-white"
           >
             <h1 className="my-4">{t("Blog articles")}</h1>
             <TitleUnderline />
@@ -48,7 +48,7 @@ const Blog: React.FC = () => {
               delay: 0.7,
               ease: "easeOut",
             }}
-            className="text-lg font-sm mb-6 font-roboto px-auto text-center px-4 text-white"
+            className="text-lg font-sm mb-6 font-roboto px-auto text-center text-white"
           >
             {t(
               "As much as coding itself, I love sharing the result of my research. We all face challenges when working on a project, and so I wish to contribute to the vast community of devs by sharing my solutions to various problems I encountered. Here is a collection of my latest writings on technology and development, all available on Medium."

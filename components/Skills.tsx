@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
     <>
       <motion.div
         whileInView={{ y: 0, opacity: 1 }}
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: -30, opacity: 0 }}
         viewport={{ once: true }}
         transition={{
           type: "spring",
@@ -49,11 +49,11 @@ const Skills: React.FC = () => {
 
       <div className="flex flex-col items-center gap-8 max-w-[80vw]">
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 1, delay: 0.7 }}
           viewport={{ once: true }}
-          className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 text-white md:mr-auto"
+          className="relative w-full md:w-[60%] py-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 text-white md:mr-auto"
         >
           <h2 className="text-2xl font-semibold font-orbitron">
             {t("Frontend Development")}
@@ -71,11 +71,11 @@ const Skills: React.FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 1, delay: 0.7 }}
           viewport={{ once: true }}
-          className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 text-white md:ml-auto"
+          className="relative w-full md:w-[60%] py-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 text-white md:ml-auto"
         >
           <h2 className="text-2xl font-semibold font-orbitron">
             {t("Backend Development")}
@@ -93,11 +93,11 @@ const Skills: React.FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 1, delay: 0.7, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="relative w-full md:w-[60%] p-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 text-white md:mr-auto"
+          className="relative w-full md:w-[60%] py-4 rounded-lg shadow-lg text-center overflow-hidden flex flex-col justify-center bg-black/10 text-white md:mr-auto"
         >
           <h2 className="text-2xl font-semibold font-orbitron">
             {t("Mobile App Development")}

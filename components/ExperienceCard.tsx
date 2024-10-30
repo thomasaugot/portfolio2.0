@@ -26,7 +26,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   return (
     <motion.div
       whileInView={{ y: 0, opacity: 1 }}
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       transition={{
         type: "spring",
         stiffness: 40,
