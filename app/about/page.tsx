@@ -8,10 +8,10 @@ import profileImage from "@/public/assets/img/profile.webp";
 import Image from "next/image";
 import TitleUnderline from "@/components/TitleUnderline";
 import dynamic from "next/dynamic";
-import { useDebounce } from "use-debounce";
-import StarsBackground from "@/components/StarsBackground";
 import { debounce } from "lodash";
+import StarsBackground from "@/components/StarsBackground";
 
+// Lazy load components for performance
 const Skills = dynamic(() => import("@/components/Skills"), { ssr: false });
 const Experience = dynamic(() => import("@/components/Experience"), {
   ssr: false,
@@ -21,26 +21,22 @@ const GradientButton = dynamic(() => import("@/components/GradientButton"), {
 });
 
 const About: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [x, setX] = useState(0);
-  const [debounceX] = useDebounce(x, 150);
 
+  // Debounced resize handler to reduce load
   const handleResize = useCallback(
     debounce(() => {
-      setIsDesktop(window.innerWidth >= 992);
+      setX(window.innerWidth >= 992 ? 0 : 30);
     }, 200),
     []
   );
 
   useEffect(() => {
-    handleResize(); // Initial call on mount
-
+    handleResize();
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [handleResize, i18n.language]);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [handleResize]);
 
   return (
     <>
@@ -50,14 +46,9 @@ const About: React.FC = () => {
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 50, opacity: 0 }}
+            initial={{ y: 40, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            transition={{
-              type: "spring",
-              stiffness: 40,
-              delay: 0.5,
-              ease: "easeOut",
-            }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
             <h1 className="my-4">
@@ -66,21 +57,20 @@ const About: React.FC = () => {
             <TitleUnderline />
           </motion.div>
 
-          <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between mt-16 lg:mt-10 w-full">
+          <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between mt-16 lg:mt-10 w-full mx-auto">
             <motion.div
-              whileInView={{ y: 0, opacity: 1 }}
-              initial={{ y: 50, opacity: 0 }}
-              viewport={{ once: true }}
-              animate={{ x: debounceX }}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ x: -30, opacity: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 40,
-                delay: 0.7,
-                ease: "easeOut",
+                stiffness: 30,
+                duration: 0.7,
+                ease: "easeInOut",
               }}
-              className="text-white"
+              viewport={{ once: true }}
+              className="text-white w-full md:w-[60vw]"
             >
-              <p className="text-base mb-4 font-roboto w-full md:w-[60vw]">
+              <p className="text-base mb-4 font-roboto">
                 {t(
                   "Hi there! I am Thomas, a passionate developer hailing from Nantes, France and currently based in Las Palmas de Gran Canaria. As an ex-globetrotter, I bring a global perspective and an insatiable appetite for challenges to the world of web and mobile development."
                 )}
@@ -96,41 +86,37 @@ const About: React.FC = () => {
                 )}
               </p>
             </motion.div>
+
             <motion.div
-              whileInView={{ x: 0, opacity: 1 }}
-              initial={{ x: 50, opacity: 0 }}
-              viewport={{ once: true }}
-              animate={{ x: debounceX }}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ x: 30, opacity: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 40,
-                delay: 0.9,
-                ease: "easeOut",
+                stiffness: 30,
+                duration: 0.7,
+                ease: "easeInOut",
               }}
+              viewport={{ once: true }}
             >
               <Image
                 src={profileImage}
                 alt="profile"
-                className="rounded-full bg-white border-2 border-white shadow-lg object-cover mx-auto w-full md:w-[30vw]"
+                className="rounded-full bg-white border-2 border-white shadow-lg object-cover mx-auto w-full md:w-[20vw]"
                 placeholder="blur"
                 priority
               />
             </motion.div>
           </div>
         </div>
-        <br />
-        <br />
+
         <Skills />
-        <br />
-        <br />
         <Experience />
-        <br />
-        <br />
+
         <div className="min-h-[100px] flex items-center justify-center mt-12">
           <motion.div
+            whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
           >
             <GradientButton href="/projects">
               {t("Explore my work")}

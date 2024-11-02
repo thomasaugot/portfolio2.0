@@ -22,12 +22,7 @@ export const frontendSkills = [
   {
     src: "https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png",
     alt: "React",
-    title: "React",
-  },
-  {
-    src: "https://github.com/thomasaugot/portfolio/raw/main/src/assets/MUI.png?raw=true?raw=true",
-    alt: "Material UI",
-    title: "Material UI",
+    title: "React JS",
   },
   {
     src: "https://camo.githubusercontent.com/cb281442f19d1d3edc7aed9196a4f775cef99eb4385c2f0e306251f008be9db6/68747470733a2f2f63646e2e69636f6e2d69636f6e732e636f6d2f69636f6e73322f323431352f504e472f3531322f747970657363726970745f6f726967696e616c5f6c6f676f5f69636f6e5f3134363331372e706e67?raw=true",
@@ -45,20 +40,15 @@ export const frontendSkills = [
     title: "Redux",
   },
   {
-    src: "https://user-images.githubusercontent.com/25181517/183898054-b3d693d4-dafb-4808-a509-bab54cf5de34.png",
-    alt: "Bootstrap",
-    title: "Bootstrap",
-  },
-  {
     src: "https://github.com/thomasaugot/portfolio/raw/main/src/assets/Tailwind_CSS.png?raw=true?raw=true",
     alt: "Tailwind CSS",
     title: "Tailwind CSS",
   },
-  {
-    src: "https://github.com/thomasaugot/portfolio/raw/main/src/assets/jest.png?raw=true?raw=true",
-    alt: "Jest Testing",
-    title: "Jest",
-  },
+  // {
+  //   src: "https://github.com/thomasaugot/portfolio/raw/main/src/assets/jest.png?raw=true?raw=true",
+  //   alt: "Jest Testing",
+  //   title: "Jest",
+  // },
   {
     src: "https://github.com/thomasaugot/thomasaugot/raw/main/vite.png",
     alt: "Vite",
@@ -134,10 +124,5 @@ export const mobileSkills = [
     src: "https://github.com/thomasaugot/portfolio/blob/main/src/assets/new-studio-logo-1.png?raw=true",
     alt: "Android Studio",
     title: "Android Studio",
-  },
-  {
-    src: "https://github.com/thomasaugot/portfolio/blob/main/src/assets/flutterflow.png?raw=true",
-    alt: "FlutterFlow",
-    title: "FlutterFlow",
   },
 ];

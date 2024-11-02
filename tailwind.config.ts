@@ -38,6 +38,7 @@ const config: Config = {
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         tapperoo: "tapperoo 3s infinite",
         handMove: "handMove 3s infinite",
+        marquee: "marquee var(--animation-duration, 10s) linear infinite",
       },
       keyframes: {
         blink: {
@@ -84,6 +85,14 @@ const config: Config = {
             transform: "translate(-60%, -10%) rotate(-30deg) scale(0.9)",
           },
           "100%": { transform: "rotate(30deg)" },
+        },
+        marquee: {
+          "0%": {
+            transform: "translateX(100%)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
         },
       },
     },

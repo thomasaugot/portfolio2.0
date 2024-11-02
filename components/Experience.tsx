@@ -5,7 +5,7 @@ import TitleUnderline from "./TitleUnderline";
 import ExperienceCard from "./ExperienceCard";
 import { experiences } from "@/data/experience";
 
-const Experience: React.FC = () => {
+const Experience: React.FC = React.memo(() => {
   const { t } = useTranslation();
 
   return (
@@ -58,6 +58,6 @@ const Experience: React.FC = () => {
       </ol>
     </>
   );
-};
+});
 
 export default Experience;
