@@ -46,7 +46,7 @@ const About: React.FC = () => {
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 40, opacity: 0 }}
+            initial={{ y: 60, opacity: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
@@ -60,7 +60,7 @@ const About: React.FC = () => {
           <div className="flex flex-col-reverse gap-12 lg:flex-row items-center lg:justify-between mt-16 lg:mt-10 w-full mx-auto">
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
-              initial={{ x: -30, opacity: 0 }}
+              initial={{ x: -50, opacity: 0 }}
               transition={{
                 type: "spring",
                 stiffness: 30,
@@ -89,7 +89,7 @@ const About: React.FC = () => {
 
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
-              initial={{ x: 30, opacity: 0 }}
+              initial={{ x: 50, opacity: 0 }}
               transition={{
                 type: "spring",
                 stiffness: 30,
