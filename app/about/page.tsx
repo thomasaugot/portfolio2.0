@@ -47,7 +47,12 @@ const About: React.FC = () => {
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
             initial={{ y: 60, opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{
+              type: "spring",
+              stiffness: 40,
+              delay: 0.5,
+              ease: "easeOut",
+            }}
             viewport={{ once: true }}
             className="text-4xl font-bold mb-6 font-orbitron text-white"
           >
@@ -65,7 +70,7 @@ const About: React.FC = () => {
                 type: "spring",
                 stiffness: 30,
                 duration: 0.7,
-                ease: "easeInOut",
+                ease: "easeOut",
               }}
               viewport={{ once: true }}
               className="text-white w-full md:w-[60vw]"
@@ -93,8 +98,8 @@ const About: React.FC = () => {
               transition={{
                 type: "spring",
                 stiffness: 30,
-                duration: 0.7,
-                ease: "easeInOut",
+                duration: 0.9,
+                ease: "easeOut",
               }}
               viewport={{ once: true }}
             >
