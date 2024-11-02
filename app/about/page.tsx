@@ -46,7 +46,7 @@ const About: React.FC = () => {
         <div className="w-full max-w-[80vw] text-center">
           <motion.div
             whileInView={{ y: 0, opacity: 1 }}
-            initial={{ y: 60, opacity: 0 }}
+            initial={{ y: -60, opacity: 0 }}
             transition={{
               type: "spring",
               stiffness: 40,
@@ -69,7 +69,7 @@ const About: React.FC = () => {
               transition={{
                 type: "spring",
                 stiffness: 30,
-                duration: 0.7,
+                delay: 0.7,
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
@@ -98,7 +98,7 @@ const About: React.FC = () => {
               transition={{
                 type: "spring",
                 stiffness: 30,
-                duration: 0.9,
+                delay: 0.9,
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
