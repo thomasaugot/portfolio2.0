@@ -7,23 +7,25 @@ import { frontendSkills, backendSkills, mobileSkills } from "@/data/skills";
 import Image from "next/image";
 
 const SkillImage: React.FC<{ src: string; alt: string; title: string }> =
-  React.memo(({ src, alt, title }) => (
-    <div className="flex flex-col items-center mx-4">
-      <div className="h-16">
-        <Image
-          src={src}
-          alt={alt}
-          title={title}
-          width={150}
-          height={150}
-          className="h-full object-contain w-auto"
-        />
+  React.memo(function SkillImage({ src, alt, title }) {
+    return (
+      <div className="flex flex-col items-center mx-4">
+        <div className="h-16">
+          <Image
+            src={src}
+            alt={alt}
+            title={title}
+            width={150}
+            height={150}
+            className="h-full object-contain w-auto"
+          />
+        </div>
+        <div className="subtitle pt-2 text-center text-white">{title}</div>
       </div>
-      <div className="subtitle pt-2 text-center text-white">{title}</div>
-    </div>
-  ));
+    );
+  });
 
-const Skills: React.FC = React.memo(() => {
+const Skills: React.FC = React.memo(function Skills() {
   const { t } = useTranslation();
 
   return (

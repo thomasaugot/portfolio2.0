@@ -60,4 +60,6 @@ const Experience: React.FC = React.memo(() => {
   );
 });
 
+Experience.displayName = "Experience";
+
 export default Experience;
