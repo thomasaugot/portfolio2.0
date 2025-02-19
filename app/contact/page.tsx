@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-8 my-20">
+      <main className="flex min-h-screen flex-col items-center justify-center p-8 my-20">
         <StarsBackground />
         <div className="w-full max-w-xl text-center">
           <motion.div
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
               ease: "easeOut",
             }}
             viewport={{ once: true }}
-            className="text-4xl font-bold mb-6 font-orbitron text-white"
+            className="text-4xl font-bold mb-6 font-orbitron text-white lg:mt-12"
           >
             <h1 className="mb-2">{t("Get in touch")}</h1>
             <TitleUnderline />
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
               delay: 0.5,
               ease: "easeOut",
             }}
-            className="text-gradient mt-10 mb-12"
+            className="text-gradient mt-10 lg:mt-42 mb-12"
           >
             <h1 className="text-4xl font-bold mb-2 font-orbitron text-white">
               {t("Connect with me")}

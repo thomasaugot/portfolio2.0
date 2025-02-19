@@ -16,8 +16,18 @@ import article15 from "@/public/assets/img/blog-articles/article-15.webp";
 import article16 from "@/public/assets/img/blog-articles/article-16.webp";
 import article17 from "@/public/assets/img/blog-articles/article-17.webp";
 import article18 from "@/public/assets/img/blog-articles/article-18.webp";
+import article19 from "@/public/assets/img/blog-articles/article-19.webp";
 
 export const blogs = [
+  {
+    title: "Why You Should Rethink PWAs and Consider WebViews for Cross-Platform Apps",
+    content:
+      "Building cross-platform mobile apps is always a challenge. When my team set out to develop an app using Next.js, we expected a Progressi...",
+    image: article19,
+    mediumLink:
+      "https://medium.com/@thomasaugot/why-you-should-rethink-pwas-and-consider-webviews-for-cross-platform-apps-6c1a4a39d6ce",
+    date: "Feb. 17, 2025",
+  },
   {
     title: "AWS for Beginners: Exploring Cloud Services",
     content:

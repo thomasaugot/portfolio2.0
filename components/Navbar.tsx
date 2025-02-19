@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import ShootingStars from "./ShootingStars";
 import StarsBackground from "./StarsBackground";
 import { MdOutlineRocketLaunch } from "react-icons/md";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -140,13 +141,17 @@ const Navbar: React.FC = () => {
         </div>
       ) : (
         // Desktop Navigation
+
         <div
-          className={`fixed top-0 left-0 right-0 z-50 bg-secondary-bg backdrop-blur-sm transition-all duration-300 ease-in-out ${
+          className={`relative top-0 left-0 right-0 z-50 bg-secondary-bg backdrop-blur-sm transition-all duration-300 ease-in-out ${
             isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-[-100%]"
           } flex justify-between items-center h-[10vh] w-full text-primary`}
         >
+          <div className="ml-4 z-50">
+            <Logo />
+          </div>
           <div className="fixed lg:absolute z-40 lg:z-0 w-[100vw] h-[14vh] bg-clip-padding backdrop-blur-sm px-10"></div>
           <div className="hidden lg:flex justify-evenly ml-auto gap-8 mr-4">
             {showHomeButton && (
