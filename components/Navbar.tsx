@@ -80,18 +80,25 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className="z-50">
+    <div
+      className="z-[999] relative"
+      style={{
+        // Ensure this doesn't block touch events
+        pointerEvents: isOpen ? "auto" : "none",
+      }}
+    >
       {isMobile ? (
         <>
           {/* Mobile Toggle Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="fixed z-50 flex flex-col justify-center items-center mr-2 top-8 right-8 w-12 h-16"
+            className="fixed z-[1000] flex flex-col justify-center gap-1 items-center mr-4 top-4 right-4 w-12 h-14"
             whileTap={{ scale: 0.9 }}
+            style={{ pointerEvents: "auto" }}
           >
             <motion.span
               className="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full"
-              animate={isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -8 }}
+              animate={isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -12 }}
               transition={{ duration: 0.2 }}
             />
             <motion.span
@@ -101,7 +108,7 @@ const Navbar: React.FC = () => {
             />
             <motion.span
               className="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full"
-              animate={isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 8 }}
+              animate={isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 12 }}
               transition={{ duration: 0.2 }}
             />
           </motion.button>
@@ -111,11 +118,22 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: isOpen ? 1 : 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 bg-black z-30"
+            className="fixed inset-0 bg-black z-[900]"
+            // Ensure this doesn't interfere with other interactions
+            style={{
+              pointerEvents: isOpen ? "auto" : "none",
+              display: isOpen ? "block" : "none",
+            }}
           />
 
           {/* Door Effects */}
-          <div className="fixed inset-0 z-40 pointer-events-none">
+          <div
+            className="fixed inset-0 z-[950] pointer-events-none"
+            style={{
+              // Explicitly allow pointer events when open
+              pointerEvents: isOpen ? "auto" : "none",
+            }}
+          >
             {/* Left Door */}
             <motion.div
               initial={{ x: "-100%" }}
@@ -123,14 +141,15 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
               className="fixed top-0 left-0 w-1/2 h-full pointer-events-auto overflow-hidden"
             >
+              <div className="absolute inset-0 z-50 bg-black/60"></div>
               <Image
                 src={doorLeft}
                 alt="Door texture"
                 fill
-                className="object-cover"
+                className="object-cover z-40"
                 priority
               />
-              <div className="absolute inset-y-0 right-0 w-px" />
+              <div className="absolute inset-y-0 right-0 w-px " />
             </motion.div>
 
             {/* Right Door */}
@@ -140,11 +159,12 @@ const Navbar: React.FC = () => {
               transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
               className="fixed top-0 right-0 w-1/2 h-full pointer-events-auto overflow-hidden"
             >
+              <div className="absolute inset-0 z-50 bg-black/60"></div>
               <Image
                 src={doorRight}
                 alt="Door texture"
                 fill
-                className="object-cover"
+                className="object-cover z-40"
                 priority
               />
               <div className="absolute inset-y-0 left-0 w-px" />
@@ -158,7 +178,7 @@ const Navbar: React.FC = () => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto"
+                  className="fixed inset-0 z-[1000] flex items-center justify-center pointer-events-auto"
                 >
                   <nav className="flex flex-col items-center space-y-8">
                     {showHomeButton && (
