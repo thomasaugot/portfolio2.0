@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import TitleUnderline from "./TitleUnderline";
 import { IoEarthOutline } from "react-icons/io5";
 import LanguageSelector from "./LanguageSelector";
@@ -10,6 +12,9 @@ import ShootingStars from "./ShootingStars";
 import StarsBackground from "./StarsBackground";
 import { MdOutlineRocketLaunch } from "react-icons/md";
 import Logo from "./Logo";
+import spaceshipDoor from "@/public/assets/img/spaceship-bg.jpg";
+import doorRight from "@/public/assets/img/door-right.jpg";
+import doorLeft from "@/public/assets/img/door-left.jpg";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,10 +24,6 @@ const Navbar: React.FC = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [showHomeButton, setShowHomeButton] = useState(false);
   const { t } = useTranslation();
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,7 +59,6 @@ const Navbar: React.FC = () => {
       const timer = setTimeout(() => {
         setShowHomeButton(true);
       }, 2000);
-
       return () => clearTimeout(timer);
     } else {
       setShowHomeButton(false);
@@ -72,76 +72,162 @@ const Navbar: React.FC = () => {
     { id: 4, text: t("Contact"), target: "/contact" },
   ];
 
+  const handleNavigation = (target: string) => {
+    setActiveLink(target);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 300);
+  };
+
   return (
-    <div>
+    <div className="z-50">
       {isMobile ? (
-        // Mobile Navigation
-        <div>
-          <div
-            onClick={handleClick}
-            className="fixed flex flex-col justify-center items-center z-50 mr-2 top-10 right-4 lg:hidden"
+        <>
+          {/* Mobile Toggle Button */}
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            className="fixed z-50 flex flex-col justify-center items-center mr-2 top-8 right-8 w-12 h-16"
+            whileTap={{ scale: 0.9 }}
           >
-            <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 rounded-sm ${
-                isOpen ? "rotate-45 translate-y-2" : "-translate-y-1"
-              }`}
-            ></span>
-            <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 rounded-sm my-1 ${
-                isOpen ? "opacity-0" : "opacity-100"
-              }`}
-            ></span>
-            <span
-              className={`bg-white block transition-all duration-300 ease-out h-1 w-10 md:w-12 rounded-sm ${
-                isOpen ? "-rotate-45 -translate-y-2" : "translate-y-1"
-              }`}
-            ></span>
+            <motion.span
+              className="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full"
+              animate={isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              className="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full"
+              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              className="absolute top-1/2 left-0 w-full h-0.5 bg-white rounded-full"
+              animate={isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 8 }}
+              transition={{ duration: 0.2 }}
+            />
+          </motion.button>
+
+          {/* Black Background */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isOpen ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 bg-black z-30"
+          />
+
+          {/* Door Effects */}
+          <div className="fixed inset-0 z-40 pointer-events-none">
+            {/* Left Door */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: isOpen ? "0%" : "-100%" }}
+              transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed top-0 left-0 w-1/2 h-full pointer-events-auto overflow-hidden"
+            >
+              <Image
+                src={doorLeft}
+                alt="Door texture"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-y-0 right-0 w-px" />
+            </motion.div>
+
+            {/* Right Door */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: isOpen ? "0%" : "100%" }}
+              transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed top-0 right-0 w-1/2 h-full pointer-events-auto overflow-hidden"
+            >
+              <Image
+                src={doorRight}
+                alt="Door texture"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-y-0 left-0 w-px" />
+            </motion.div>
+
+            {/* Navigation Menu */}
+            <AnimatePresence mode="wait">
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto"
+                >
+                  <nav className="flex flex-col items-center space-y-8">
+                    {showHomeButton && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0, transition: { duration: 0.2 } }}
+                        className="relative text-white mb-4"
+                      >
+                        <Link href="/" onClick={() => handleNavigation("/")}>
+                          <IoEarthOutline className="text-5xl" />
+                          <MdOutlineRocketLaunch className="absolute text-2xl -bottom-3 right-10" />
+                        </Link>
+                      </motion.div>
+                    )}
+
+                    {navItems.map((item, index) => (
+                      <motion.div
+                        key={item.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{
+                          opacity: 0,
+                          y: -20,
+                          transition: { duration: 0.2 },
+                        }}
+                        transition={{ delay: 0.1 + index * 0.1 }}
+                        className="w-full text-center"
+                      >
+                        <Link
+                          href={item.target}
+                          className="font-orbitron tracking-wider p-4 text-white text-3xl md:text-4xl hover:text-blue-400 transition-colors inline-block relative"
+                          onClick={() => handleNavigation(item.target)}
+                        >
+                          {item.text}
+                          {activeLink === item.target && (
+                            <div className="absolute w-full left-0 -bottom-2">
+                              <TitleUnderline />
+                            </div>
+                          )}
+                        </Link>
+                      </motion.div>
+                    ))}
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{
+                        opacity: 0,
+                        y: -20,
+                        transition: { duration: 0.2 },
+                      }}
+                      transition={{ delay: 0.5 }}
+                      className="pt-4"
+                    >
+                      <LanguageSelector />
+                    </motion.div>
+                  </nav>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-          <ul
-            className={`fixed z-40 lg:hidden left-0 top-0 w-full h-full bg-primary-bg flex flex-col items-center justify-center transition-transform duration-500 ${
-              isOpen ? "translate-x-0" : "-translate-x-full"
-            }`}
-          >
-            <div className="absolute inset-y-0 right-0 w-[2px] bg-gradient"></div>
-            <ShootingStars />
-            <StarsBackground />
-            {showHomeButton && (
-              <Link
-                href="/"
-                onClick={() => {
-                  setIsOpen(false);
-                  setActiveLink("/");
-                }}
-                className="relative text-white mb-4"
-              >
-                <Link href="/" onClick={() => setActiveLink("/")}>
-                  <IoEarthOutline className="text-5xl" />
-                  <MdOutlineRocketLaunch className="absolute text-2xl -bottom-3 right-10" />
-                </Link>
-              </Link>
-            )}
-            {navItems.map((item) => (
-              <li
-                key={item.id}
-                className="font-orbitron z-50 tracking-wider p-4 md:p-6 rounded-xl font-medium text-white text-3xl md:text-4xl text-center cursor-pointer"
-                onClick={() => {
-                  setActiveLink(item.target);
-                  setIsOpen(false);
-                  window.location.href = item.target;
-                }}
-              >
-                {item.text}
-                {activeLink === item.target && <TitleUnderline />}
-              </li>
-            ))}
-            <div className="flex justify-center items-center">
-              <LanguageSelector />
-            </div>
-          </ul>
-        </div>
+
+          {/* Stars Effects */}
+          <ShootingStars />
+          <StarsBackground />
+        </>
       ) : (
         // Desktop Navigation
-
         <div
           className={`relative top-0 left-0 right-0 z-50 bg-secondary-bg backdrop-blur-sm transition-all duration-300 ease-in-out ${
             isVisible
@@ -166,7 +252,7 @@ const Navbar: React.FC = () => {
               <div key={item.id} className="relative">
                 <Link
                   href={item.target}
-                  className={`py-1 text-white font-regular cursor-pointer hover:scale-110 relative m-1 text-lg tracking-wide font-regular font-orbitron`}
+                  className="py-1 text-white font-regular cursor-pointer hover:scale-110 relative m-1 text-lg tracking-wide font-regular font-orbitron"
                   onClick={() => setActiveLink(item.target)}
                 >
                   {item.text}

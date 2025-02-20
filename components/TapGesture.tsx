@@ -13,7 +13,7 @@ const TapGesture: React.FC = () => {
 
   return (
     isVisible && (
-      <div className=" h-[50px] w-[50px] transform -translate-x-1/2 -translate-y-1/2 fixed bottom-8 right-8 opacity-100 transition-all duration-300 pointer-events-none z-50">
+      <div className="z-40 h-[50px] w-[50px] transform -translate-x-1/2 -translate-y-1/2 fixed bottom-8 right-8 opacity-100 transition-all duration-300 pointer-events-none">
         <div className="absolute top-[-5px] left-[50px] h-[48px] w-[100px] rounded-full bg-white z-[-1] animate-tapperoo" />
         <svg
           className="absolute transform rotate-[30deg] animate-handMove"
