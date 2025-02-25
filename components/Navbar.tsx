@@ -23,6 +23,8 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [showHomeButton, setShowHomeButton] = useState(false);
+  const [showFinalGlow, setShowFinalGlow] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -64,6 +66,37 @@ const Navbar: React.FC = () => {
       setShowHomeButton(false);
     }
   }, [activeLink]);
+
+  // Handle the sequence of animations with faster timing
+  useEffect(() => {
+    let laserTimeout: NodeJS.Timeout | undefined;
+    let glowTimeout: NodeJS.Timeout | undefined;
+    let menuTimeout: NodeJS.Timeout | undefined;
+
+    if (isOpen) {
+      setShowFinalGlow(false);
+      setShowMenu(false);
+      
+      // After laser animation completes, show the final glow (faster timing)
+      laserTimeout = setTimeout(() => {
+        setShowFinalGlow(true);
+      }, 600); // reduced from 1000ms
+      
+      // After glow animation completes, show the menu (faster timing)
+      glowTimeout = setTimeout(() => {
+        setShowMenu(true);
+      }, 1000); // reduced from 1600ms
+    } else {
+      setShowFinalGlow(false);
+      setShowMenu(false);
+    }
+
+    return () => {
+      clearTimeout(laserTimeout);
+      clearTimeout(glowTimeout);
+      clearTimeout(menuTimeout);
+    };
+  }, [isOpen]);
 
   const navItems = [
     { id: 1, text: t("About"), target: "/about" },
@@ -130,7 +163,6 @@ const Navbar: React.FC = () => {
           <div
             className="fixed inset-0 z-[950] pointer-events-none"
             style={{
-              // Explicitly allow pointer events when open
               pointerEvents: isOpen ? "auto" : "none",
             }}
           >
@@ -146,7 +178,7 @@ const Navbar: React.FC = () => {
                 src={doorLeft}
                 alt="Door texture"
                 fill
-                className="object-cover z-40"
+                className="object-left z-40"
                 priority
               />
               <div className="absolute inset-y-0 right-0 w-px " />
@@ -164,20 +196,141 @@ const Navbar: React.FC = () => {
                 src={doorRight}
                 alt="Door texture"
                 fill
-                className="object-cover z-40"
+                className="object-right z-40"
                 priority
               />
               <div className="absolute inset-y-0 left-0 w-px" />
             </motion.div>
+            
+            {/* Top Laser Effect - FASTER ANIMATION */}
+            <AnimatePresence>
+              {isOpen && !showFinalGlow && (
+                <motion.div
+                  className="fixed top-1/2 bottom-0 left-1/2 transform -translate-x-1/2 w-0.5 bg-blue-500 z-[960] pointer-events-none"
+                  initial={{ 
+                    height: "0%", 
+                    top: "50%", 
+                    bottom: "50%" 
+                  }}
+                  animate={{ 
+                    height: "50%",
+                    top: "0%",
+                    bottom: "50%",
+                    opacity: 1,
+                    boxShadow: "0 0 8px rgba(59, 130, 246, 0.9), 0 0 16px rgba(59, 130, 246, 0.5)"
+                  }}
+                  exit={{ 
+                    height: "0%",
+                    top: "50%",
+                    bottom: "50%",
+                    opacity: 0,
+                    boxShadow: "none",
+                    transition: { duration: 0.2 }
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: 0.2 
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            
+            {/* Bottom Laser Effect */}
+            <AnimatePresence>
+              {isOpen && !showFinalGlow && (
+                <motion.div
+                  className="fixed top-0 bottom-1/2 left-1/2 transform -translate-x-1/2 w-0.5 bg-blue-500 z-[960] pointer-events-none"
+                  initial={{ 
+                    height: "0%", 
+                    top: "50%", 
+                    bottom: "50%" 
+                  }}
+                  animate={{ 
+                    height: "50%",
+                    top: "50%",
+                    bottom: "0%",
+                    opacity: 1,
+                    boxShadow: "0 0 8px rgba(59, 130, 246, 0.9), 0 0 16px rgba(59, 130, 246, 0.5)"
+                  }}
+                  exit={{ 
+                    height: "0%",
+                    top: "50%",
+                    bottom: "50%",
+                    opacity: 0,
+                    boxShadow: "none",
+                    transition: { duration: 0.2 }
+                  }}
+                  transition={{ 
+                    duration: 0.6,
+                    ease: "easeOut",
+                    delay: 0.2 
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            
+            {/* Final Glow Effect */}
+            <AnimatePresence>
+              {showFinalGlow && (
+                <motion.div
+                  className="fixed inset-0 z-[960] pointer-events-none"
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: [0, 0.8, 0],
+                  }}
+                  exit={{ opacity: 0 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    times: [0, 0.4, 1],
+                    ease: "easeOut"
+                  }}
+                >
+                  <div className="absolute inset-0 bg-blue-500 opacity-5"></div>
+                  <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-0.5 bg-blue-500"
+                       style={{ boxShadow: "0 0 20px rgba(59, 130, 246, 0.9), 0 0 40px rgba(59, 130, 246, 0.7), 0 0 60px rgba(59, 130, 246, 0.5)" }}></div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            
+            {/* Center flash effect  */}
+            <AnimatePresence>
+              {isOpen && !showFinalGlow && (
+                <motion.div
+                  className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-blue-400 backdrop-blur-lg z-[961] pointer-events-none"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ 
+                    scale: [0, 10, 5, 2, 0],
+                    opacity: [0, 1, 0.8, 0.4, 0],
+                    boxShadow: [
+                      "none", 
+                      "0 0 20px rgba(59, 130, 246, 1), 0 0 40px rgba(59, 130, 246, 0.8)", 
+                      "0 0 15px rgba(59, 130, 246, 0.7), 0 0 30px rgba(59, 130, 246, 0.5)", 
+                      "0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3)",
+                      "none"
+                    ]
+                  }}
+                  exit={{ 
+                    scale: 0,
+                    opacity: 0
+                  }}
+                  transition={{ 
+                    duration: 0.4, // Reduced from 0.7
+                    times: [0, 0.2, 0.4, 0.7, 1],
+                    ease: "easeOut"
+                  }}
+                />
+              )}
+            </AnimatePresence>
 
-            {/* Navigation Menu */}
+            {/* Navigation Menu - shows after final glow */}
             <AnimatePresence mode="wait">
-              {isOpen && (
+              {showMenu && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   className="fixed inset-0 z-[1000] flex items-center justify-center pointer-events-auto"
                 >
                   <nav className="flex flex-col items-center space-y-8">
@@ -247,7 +400,7 @@ const Navbar: React.FC = () => {
           <StarsBackground />
         </>
       ) : (
-        // Desktop Navigation - NO STYLE CHANGES
+        // Desktop Navigation 
         <div
           className={`relative top-0 left-0 right-0 z-50 bg-secondary-bg backdrop-blur-sm transition-all duration-300 ease-in-out ${
             isVisible
