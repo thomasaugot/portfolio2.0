@@ -81,10 +81,10 @@ const Navbar: React.FC = () => {
 
   return (
     <div
-      className="z-[999] relative"
+      className="z-50 relative"
       style={{
-        // Ensure this doesn't block touch events
-        pointerEvents: isOpen ? "auto" : "none",
+        // Apply pointer-events: none only when mobile and menu is closed
+        pointerEvents: isMobile && !isOpen ? "none" : "auto",
       }}
     >
       {isMobile ? (
@@ -247,7 +247,7 @@ const Navbar: React.FC = () => {
           <StarsBackground />
         </>
       ) : (
-        // Desktop Navigation
+        // Desktop Navigation - NO STYLE CHANGES
         <div
           className={`relative top-0 left-0 right-0 z-50 bg-secondary-bg backdrop-blur-sm transition-all duration-300 ease-in-out ${
             isVisible

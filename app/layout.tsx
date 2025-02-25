@@ -45,7 +45,7 @@ export default function RootLayout({
       </Head>
       <body className={`${inter.className} bg-primary-bg`}>
         <ClientSideWrapper>
-          <div className="relative min-h-screen flex flex-col">
+          <div className="relative min-h-screen flex flex-col z-0">
             <ShootingStars />
             <Navbar />
             <main className="flex-1">{children}</main>
